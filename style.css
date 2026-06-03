@@ -13,7 +13,8 @@
   /* Brand accents */
   --accent:        #7C6AFF;   /* signature purple */
   --accent-2:      #9F87FF;
-  --accent-soft:   rgba(124, 106, 255, 0.15);
+  --accent-rgb:    124, 106, 255;
+  --accent-soft:   rgba(var(--accent-rgb), 0.15);
 
   /* Warm plush accents (from the fluffy logo) */
   --peach:         #FFB59E;
@@ -41,6 +42,14 @@
           "Helvetica Neue", Arial, sans-serif;
 
   --shadow:        0 24px 70px rgba(0, 0, 0, 0.5);
+}
+
+/* Brand accent preview — orange-red variant (matches iOS #FF5533).
+   Toggled via theme-preview.js setting <html data-accent="orange">. */
+html[data-accent="orange"] {
+  --accent:     #FF5533;
+  --accent-2:   #FF7A5C;
+  --accent-rgb: 255, 85, 51;
 }
 
 /* ---------- Reset ---------- */
@@ -71,9 +80,9 @@ body::before {
   inset: 0;
   z-index: -2;
   background:
-    radial-gradient(55vw 55vw at 12% -8%, rgba(124, 106, 255, 0.22), transparent 60%),
+    radial-gradient(55vw 55vw at 12% -8%, rgba(var(--accent-rgb), 0.22), transparent 60%),
     radial-gradient(50vw 50vw at 100% 0%, rgba(255, 181, 158, 0.14), transparent 58%),
-    radial-gradient(60vw 60vw at 50% 110%, rgba(124, 106, 255, 0.10), transparent 60%),
+    radial-gradient(60vw 60vw at 50% 110%, rgba(var(--accent-rgb), 0.10), transparent 60%),
     var(--bg);
 }
 
@@ -140,9 +149,9 @@ h1, h2, h3 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: #fff;
-  box-shadow: 0 12px 34px rgba(124, 106, 255, 0.4);
+  box-shadow: 0 12px 34px rgba(var(--accent-rgb), 0.4);
 }
-.btn-primary:hover { color: #fff; box-shadow: 0 16px 44px rgba(124, 106, 255, 0.55); }
+.btn-primary:hover { color: #fff; box-shadow: 0 16px 44px rgba(var(--accent-rgb), 0.55); }
 
 .btn-ghost {
   background: var(--glass-bg);
@@ -211,7 +220,7 @@ h1, h2, h3 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
 .lang-switch button.is-active {
   color: #fff;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: 0 4px 14px rgba(124, 106, 255, 0.35);
+  box-shadow: 0 4px 14px rgba(var(--accent-rgb), 0.35);
 }
 
 /* ---------- Floating decorative blobs (GPU-only: transform/opacity) ---------- */
@@ -225,9 +234,9 @@ h1, h2, h3 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
   will-change: transform;
   animation: drift 16s ease-in-out infinite;
 }
-.blob.b1 { width: 320px; height: 320px; background: rgba(124,106,255,0.35); top: -60px; left: -40px; }
+.blob.b1 { width: 320px; height: 320px; background: rgba(var(--accent-rgb),0.35); top: -60px; left: -40px; }
 .blob.b2 { width: 260px; height: 260px; background: rgba(255,181,158,0.30); top: 20%; right: -60px; animation-delay: -5s; }
-.blob.b3 { width: 300px; height: 300px; background: rgba(124,106,255,0.22); bottom: -80px; left: 30%; animation-delay: -9s; }
+.blob.b3 { width: 300px; height: 300px; background: rgba(var(--accent-rgb),0.22); bottom: -80px; left: 30%; animation-delay: -9s; }
 
 @keyframes drift {
   0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
@@ -296,7 +305,7 @@ h1, h2, h3 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
 }
 .card:hover {
   transform: translateY(-6px);
-  border-color: rgba(124, 106, 255, 0.55);
+  border-color: rgba(var(--accent-rgb), 0.55);
   background: var(--glass-bg-2);
   box-shadow: 0 22px 50px rgba(0, 0, 0, 0.35);
 }
@@ -348,7 +357,7 @@ h1, h2, h3 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
   font-weight: 800; font-size: 1.2rem;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: #fff; margin-bottom: 18px;
-  box-shadow: 0 8px 22px rgba(124, 106, 255, 0.4);
+  box-shadow: 0 8px 22px rgba(var(--accent-rgb), 0.4);
 }
 
 /* ---------- Testimonials / vibe ---------- */
@@ -368,7 +377,7 @@ h1, h2, h3 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
 .download .card {
   padding: clamp(40px, 6vw, 70px);
   background:
-    radial-gradient(80% 130% at 50% 0%, rgba(124, 106, 255, 0.2), transparent 70%),
+    radial-gradient(80% 130% at 50% 0%, rgba(var(--accent-rgb), 0.2), transparent 70%),
     radial-gradient(70% 120% at 50% 110%, rgba(255, 181, 158, 0.14), transparent 70%),
     var(--glass-bg);
 }
@@ -508,7 +517,7 @@ a.card-link:hover .card-cta { gap: 12px; }
   width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center;
   font-weight: 800; font-size: 1.1rem; color: #fff; margin-bottom: 16px;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  box-shadow: 0 8px 20px rgba(124,106,255,0.4);
+  box-shadow: 0 8px 20px rgba(var(--accent-rgb),0.4);
 }
 
 /* ---- Mafia role flip cards ---- */
@@ -568,7 +577,7 @@ a.card-link:hover .card-cta { gap: 12px; }
   backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur));
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
-.cat-chip:hover { transform: translateY(-3px); border-color: rgba(124,106,255,0.5); }
+.cat-chip:hover { transform: translateY(-3px); border-color: rgba(var(--accent-rgb),0.5); }
 .cat-chip .e { font-size: 1.3rem; }
 
 .demo-wrap { margin-top: 40px; text-align: center; }
@@ -609,7 +618,7 @@ a.card-link:hover .card-cta { gap: 12px; }
   backdrop-filter: blur(var(--glass-blur)); -webkit-backdrop-filter: blur(var(--glass-blur));
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
 }
-.solo-tile:hover { transform: translateY(-4px); border-color: rgba(124,106,255,0.5); background: var(--glass-bg-2); }
+.solo-tile:hover { transform: translateY(-4px); border-color: rgba(var(--accent-rgb),0.5); background: var(--glass-bg-2); }
 .solo-tile .e { font-size: 2.2rem; }
 .solo-tile h3 { margin: 12px 0 4px; font-size: 1.1rem; }
 .solo-tile p { margin: 0; font-size: 0.85rem; color: var(--text-muted); }
