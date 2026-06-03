@@ -25,9 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Preload the LCP hero logo (webp) -->
   <link rel="preload" as="image" href="assets/logo.webp" type="image/webp" />
-
   <link rel="stylesheet" href="style.css" />
 
   <script type="application/ld+json">
@@ -46,16 +44,21 @@
   <!-- ===================== Header ===================== -->
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="MaGame — на главную">
+      <a class="brand" href="#top" aria-label="MaGame">
         <img class="logo" src="assets/app-icon.webp" alt="" width="34" height="34" />
         MaGame
       </a>
-      <nav class="nav-links" aria-label="Основная навигация">
-        <a href="#games">Игры</a>
-        <a href="#how">Как играть</a>
-        <a href="#vibe">Атмосфера</a>
-        <a href="#download">Скачать</a>
+      <nav class="nav-links" aria-label="Menu">
+        <a href="#games" data-i18n="nav.games">Игры</a>
+        <a href="#how" data-i18n="nav.how">Как играть</a>
+        <a href="#vibe" data-i18n="nav.vibe">Атмосфера</a>
+        <a href="#download" data-i18n="nav.download">Скачать</a>
       </nav>
+      <div class="lang-switch" role="group" aria-label="Язык / Language / Dil">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="az" aria-pressed="false">AZ</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
     </div>
   </header>
 
@@ -67,24 +70,24 @@
 
       <picture>
         <source srcset="assets/logo.webp" type="image/webp" />
-        <img class="hero-logo" src="assets/logo-opt.png" alt="Логотип MaGame — пушистый плюшевый геймпад с ушками"
+        <img class="hero-logo" src="assets/logo-opt.png" alt="MaGame"
              width="640" height="531" fetchpriority="high" />
       </picture>
 
-      <span class="hero-pill reveal">🧸 Уютно, как любимая плюшевая игрушка</span>
-      <h1 class="reveal" style="--delay:60ms">Собери своих.<br />Включи хаос.</h1>
-      <p class="tagline reveal" style="--delay:120ms">
+      <span class="hero-pill reveal" data-i18n="hero.pill">🧸 Уютно, как любимая плюшевая игрушка</span>
+      <h1 class="reveal" style="--delay:60ms" data-i18n="hero.title">Собери своих.<br />Включи хаос.</h1>
+      <p class="tagline reveal" style="--delay:120ms" data-i18n="hero.tagline">
         Шпион, Мафия и головоломки на одного. Та самая игра, от которой компания ржёт до самой ночи.
       </p>
       <div class="hero-cta reveal" style="--delay:180ms">
         <a class="btn btn-primary" href="#download" aria-disabled="true">
-           <span class="store-ico" aria-hidden="true"></span> App Store <span class="badge">Скоро</span>
+           <span class="store-ico" aria-hidden="true"></span> App Store <span class="badge" data-i18n="badge.soon">Скоро</span>
         </a>
         <a class="btn btn-ghost" href="#download" aria-disabled="true">
-          <span class="store-ico" aria-hidden="true">▶</span> Google Play <span class="badge">Скоро</span>
+          <span class="store-ico" aria-hidden="true">▶</span> Google Play <span class="badge" data-i18n="badge.soon">Скоро</span>
         </a>
       </div>
-      <p class="hero-note reveal" style="--delay:220ms">Бесплатно · iOS &amp; Android · 13+</p>
+      <p class="hero-note reveal" style="--delay:220ms" data-i18n="hero.note">Бесплатно · iOS &amp; Android · 13+</p>
     </section>
 
     <!-- ===================== Games ===================== -->
@@ -92,9 +95,9 @@
       <span class="blob b3" aria-hidden="true"></span>
       <div class="container">
         <div class="text-center">
-          <span class="eyebrow reveal">Во что играем</span>
-          <h2 class="section-title reveal" style="--delay:60ms">Выбирай настроение</h2>
-          <p class="section-lead reveal" style="--delay:120ms">
+          <span class="eyebrow reveal" data-i18n="games.eyebrow">Во что играем</span>
+          <h2 class="section-title reveal" style="--delay:60ms" data-i18n="games.title">Выбирай настроение</h2>
+          <p class="section-lead reveal" style="--delay:120ms" data-i18n="games.lead">
             Громкие командные игры для вечеринки — и тихие головоломки, когда хочется побыть одному.
           </p>
         </div>
@@ -102,26 +105,26 @@
         <div class="grid grid-3">
           <article class="card reveal">
             <div class="icon" aria-hidden="true">🕵️</div>
-            <h3>Шпион</h3>
-            <p>Все знают локацию — кроме одного. Вычисли шпиона по ответам, пока он не раскусил, где вы.</p>
-            <p class="teaser">«Ты вообще в теме? А ну скажи, что мы тут делаем 👀»</p>
-            <div class="tags"><span>Мультиплеер</span><span>3+ игрока</span><span>Блеф</span></div>
+            <h3 data-i18n="games.spy.title">Шпион</h3>
+            <p data-i18n="games.spy.desc">Все знают локацию — кроме одного. Вычисли шпиона по ответам, пока он не раскусил, где вы.</p>
+            <p class="teaser" data-i18n="games.spy.teaser">«Ты вообще в теме? А ну скажи, что мы тут делаем 👀»</p>
+            <div class="tags" data-i18n-tags="games.spy.tags"><span>Мультиплеер</span><span>3+ игрока</span><span>Блеф</span></div>
           </article>
 
           <article class="card reveal" style="--delay:90ms">
             <div class="icon" aria-hidden="true">🎭</div>
-            <h3>Мафия</h3>
-            <p>Город засыпает — просыпается мафия. День, ночь, голосования и тот самый театр блефа.</p>
-            <p class="teaser">«Я мирный, клянусь! Это он подозрительный весь вечер 🎭»</p>
-            <div class="tags"><span>Мультиплеер</span><span>Ролевая</span><span>Эмоции</span></div>
+            <h3 data-i18n="games.mafia.title">Мафия</h3>
+            <p data-i18n="games.mafia.desc">Город засыпает — просыпается мафия. День, ночь, голосования и тот самый театр блефа.</p>
+            <p class="teaser" data-i18n="games.mafia.teaser">«Я мирный, клянусь! Это он подозрительный весь вечер 🎭»</p>
+            <div class="tags" data-i18n-tags="games.mafia.tags"><span>Мультиплеер</span><span>Ролевая</span><span>Эмоции</span></div>
           </article>
 
           <article class="card reveal" style="--delay:180ms">
             <div class="icon" aria-hidden="true">🎮</div>
-            <h3>Соло-режим</h3>
-            <p>Не с кем играть? Sudoku, 2048, Minesweeper, Nonogram и другие — всегда в кармане, даже без сети.</p>
-            <p class="teaser">«Ещё один уровень — и спать. (Спойлер: не один) 🌙»</p>
-            <div class="tags"><span>Sudoku</span><span>2048</span><span>Minesweeper</span><span>+ещё</span></div>
+            <h3 data-i18n="games.solo.title">Соло-режим</h3>
+            <p data-i18n="games.solo.desc">Не с кем играть? Sudoku, 2048, Minesweeper, Nonogram и другие — всегда в кармане, даже без сети.</p>
+            <p class="teaser" data-i18n="games.solo.teaser">«Ещё один уровень — и спать. (Спойлер: не один) 🌙»</p>
+            <div class="tags" data-i18n-tags="games.solo.tags"><span>Sudoku</span><span>2048</span><span>Minesweeper</span><span>+ещё</span></div>
           </article>
         </div>
       </div>
@@ -131,9 +134,9 @@
     <section class="section" id="how">
       <div class="container">
         <div class="text-center">
-          <span class="eyebrow reveal">Проще простого</span>
-          <h2 class="section-title reveal" style="--delay:60ms">Как это работает</h2>
-          <p class="section-lead reveal" style="--delay:120ms">
+          <span class="eyebrow reveal" data-i18n="how.eyebrow">Проще простого</span>
+          <h2 class="section-title reveal" style="--delay:60ms" data-i18n="how.title">Как это работает</h2>
+          <p class="section-lead reveal" style="--delay:120ms" data-i18n="how.lead">
             От «давайте во что-нибудь сыграем» до общего смеха — три тапа.
           </p>
         </div>
@@ -141,18 +144,18 @@
         <div class="grid grid-3 steps">
           <article class="card reveal">
             <div class="step-num" aria-hidden="true">1</div>
-            <h3>Создай комнату</h3>
-            <p>Один тап — и лобби готово. Выбери игру и жди своих.</p>
+            <h3 data-i18n="how.s1.title">Создай комнату</h3>
+            <p data-i18n="how.s1.desc">Один тап — и лобби готово. Выбери игру и жди своих.</p>
           </article>
           <article class="card reveal" style="--delay:90ms">
             <div class="step-num" aria-hidden="true">2</div>
-            <h3>Зови друзей</h3>
-            <p>Поделись кодом или ссылкой. Все заходят в пару секунд — регистрация не обязательна.</p>
+            <h3 data-i18n="how.s2.title">Зови друзей</h3>
+            <p data-i18n="how.s2.desc">Поделись кодом или ссылкой. Все заходят в пару секунд — регистрация не обязательна.</p>
           </article>
           <article class="card reveal" style="--delay:180ms">
             <div class="step-num" aria-hidden="true">3</div>
-            <h3>Играйте вживую</h3>
-            <p>Смех, споры, реванш. А потом ещё разок — «ну последний, обещаю».</p>
+            <h3 data-i18n="how.s3.title">Играйте вживую</h3>
+            <p data-i18n="how.s3.desc">Смех, споры, реванш. А потом ещё разок — «ну последний, обещаю».</p>
           </article>
         </div>
       </div>
@@ -162,30 +165,30 @@
     <section class="section" id="features">
       <div class="container">
         <div class="text-center">
-          <span class="eyebrow reveal">Почему MaGame</span>
-          <h2 class="section-title reveal" style="--delay:60ms">Сделано, чтобы было тепло и весело</h2>
+          <span class="eyebrow reveal" data-i18n="feat.eyebrow">Почему MaGame</span>
+          <h2 class="section-title reveal" style="--delay:60ms" data-i18n="feat.title">Сделано, чтобы было тепло и весело</h2>
         </div>
 
         <div class="grid grid-4">
           <article class="card reveal">
             <div class="icon" aria-hidden="true">📡</div>
-            <h3>Вживую с друзьями</h3>
-            <p>Реальный мультиплеер в одной комнате. Играйте вместе, где бы вы ни были.</p>
+            <h3 data-i18n="feat.f1.title">Вживую с друзьями</h3>
+            <p data-i18n="feat.f1.desc">Реальный мультиплеер в одной комнате. Играйте вместе, где бы вы ни были.</p>
           </article>
           <article class="card reveal" style="--delay:90ms">
             <div class="icon" aria-hidden="true">✈️</div>
-            <h3>Работает оффлайн</h3>
-            <p>Головоломки на одного не требуют интернета. Прогресс сохраняется и синхронизируется.</p>
+            <h3 data-i18n="feat.f2.title">Работает оффлайн</h3>
+            <p data-i18n="feat.f2.desc">Головоломки на одного не требуют интернета. Прогресс сохраняется и синхронизируется.</p>
           </article>
           <article class="card reveal" style="--delay:180ms">
             <div class="icon" aria-hidden="true">🏆</div>
-            <h3>Лиги и прогресс</h3>
-            <p>Набирай опыт и поднимайся по лигам — от Rookie до Phantom. Есть к чему стремиться.</p>
+            <h3 data-i18n="feat.f3.title">Лиги и прогресс</h3>
+            <p data-i18n="feat.f3.desc">Набирай опыт и поднимайся по лигам — от Rookie до Phantom. Есть к чему стремиться.</p>
           </article>
           <article class="card reveal" style="--delay:270ms">
             <div class="icon" aria-hidden="true">🧸</div>
-            <h3>Без агрессии</h3>
-            <p>Никаких навязчивых баннеров. Только реклама по желанию — за подсказку, когда сам захочешь.</p>
+            <h3 data-i18n="feat.f4.title">Без агрессии</h3>
+            <p data-i18n="feat.f4.desc">Никаких навязчивых баннеров. Только реклама по желанию — за подсказку, когда сам захочешь.</p>
           </article>
         </div>
       </div>
@@ -195,25 +198,25 @@
     <section class="section" id="vibe">
       <div class="container">
         <div class="text-center">
-          <span class="eyebrow reveal">Атмосфера</span>
-          <h2 class="section-title reveal" style="--delay:60ms">Примерно так это звучит</h2>
-          <p class="section-lead reveal" style="--delay:120ms">
+          <span class="eyebrow reveal" data-i18n="vibe.eyebrow">Атмосфера</span>
+          <h2 class="section-title reveal" style="--delay:60ms" data-i18n="vibe.title">Примерно так это звучит</h2>
+          <p class="section-lead reveal" style="--delay:120ms" data-i18n="vibe.lead">
             Игра ещё готовится к запуску — а вот вайб, который тебя ждёт.
           </p>
         </div>
 
         <div class="vibe-grid">
           <blockquote class="vibe reveal">
-            <p>«Не могли остановиться до трёх ночи 😂»</p>
-            <span class="who">— то самое чувство вечера с MaGame</span>
+            <p data-i18n="vibe.q1.text">«Не могли остановиться до трёх ночи 😂»</p>
+            <span class="who" data-i18n="vibe.q1.who">— то самое чувство вечера с MaGame</span>
           </blockquote>
           <blockquote class="vibe reveal" style="--delay:90ms">
-            <p>«Я была уверена, что шпион — это он. А шпионом была я 🙈»</p>
-            <span class="who">— как это обычно и заканчивается</span>
+            <p data-i18n="vibe.q2.text">«Я была уверена, что шпион — это он. А шпионом была я 🙈»</p>
+            <span class="who" data-i18n="vibe.q2.who">— как это обычно и заканчивается</span>
           </blockquote>
           <blockquote class="vibe reveal" style="--delay:180ms">
-            <p>«В метро прошёл три уровня судоку и не заметил, как доехал»</p>
-            <span class="who">— соло-режим, любой свободный момент</span>
+            <p data-i18n="vibe.q3.text">«В метро прошёл три уровня судоку и не заметил, как доехал»</p>
+            <span class="who" data-i18n="vibe.q3.who">— соло-режим, любой свободный момент</span>
           </blockquote>
         </div>
       </div>
@@ -225,16 +228,16 @@
         <div class="card reveal">
           <picture>
             <source srcset="assets/app-icon.webp" type="image/webp" />
-            <img class="download-logo" src="assets/icon-192.png" alt="Иконка приложения MaGame" width="96" height="96" />
+            <img class="download-logo" src="assets/icon-192.png" alt="MaGame" width="96" height="96" />
           </picture>
-          <span class="eyebrow">Совсем скоро</span>
-          <h2 class="section-title">Собери друзей — будет весело</h2>
-          <p class="section-lead">
+          <span class="eyebrow" data-i18n="dl.eyebrow">Совсем скоро</span>
+          <h2 class="section-title" data-i18n="dl.title">Собери друзей — будет весело</h2>
+          <p class="section-lead" data-i18n="dl.lead">
             MaGame готовится к запуску на iOS и Android. Кнопки оживут, как только приложение появится в сторах.
           </p>
           <div class="store-buttons">
-            <a class="btn btn-primary" href="#" aria-disabled="true"><span class="store-ico" aria-hidden="true"></span> App Store <span class="badge">Скоро</span></a>
-            <a class="btn btn-ghost" href="#" aria-disabled="true"><span class="store-ico" aria-hidden="true">▶</span> Google Play <span class="badge">Скоро</span></a>
+            <a class="btn btn-primary" href="#" aria-disabled="true"><span class="store-ico" aria-hidden="true"></span> App Store <span class="badge" data-i18n="badge.soon">Скоро</span></a>
+            <a class="btn btn-ghost" href="#" aria-disabled="true"><span class="store-ico" aria-hidden="true">▶</span> Google Play <span class="badge" data-i18n="badge.soon">Скоро</span></a>
           </div>
         </div>
       </div>
@@ -247,13 +250,208 @@
       <a class="brand" href="#top">
         <img class="logo" src="assets/app-icon.webp" alt="" width="34" height="34" /> MaGame
       </a>
-      <nav class="footer-links" aria-label="Ссылки в подвале">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="mailto:mahammadalipashayev@gmail.com">Контакт</a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="mailto:mahammadalipashayev@gmail.com" data-i18n="footer.contact">Контакт</a>
       </nav>
-      <p class="footer-copy">© 2026 MaGame. Сделано с теплотой.</p>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 MaGame. Сделано с теплотой.</p>
     </div>
   </footer>
+
+  <!-- ===================== i18n (RU / AZ / EN) ===================== -->
+  <script>
+    (function () {
+      var SUPPORTED = ['ru', 'az', 'en'];
+      var FALLBACK = 'en';
+      var KEY = 'magame_lang';
+
+      var DICT = {
+        ru: {
+          'nav.games': 'Игры', 'nav.how': 'Как играть', 'nav.vibe': 'Атмосфера', 'nav.download': 'Скачать',
+          'hero.pill': '🧸 Уютно, как любимая плюшевая игрушка',
+          'hero.title': 'Собери своих.<br>Включи хаос.',
+          'hero.tagline': 'Шпион, Мафия и головоломки на одного. Та самая игра, от которой компания ржёт до самой ночи.',
+          'badge.soon': 'Скоро',
+          'hero.note': 'Бесплатно · iOS &amp; Android · 13+',
+          'games.eyebrow': 'Во что играем', 'games.title': 'Выбирай настроение',
+          'games.lead': 'Громкие командные игры для вечеринки — и тихие головоломки, когда хочется побыть одному.',
+          'games.spy.title': 'Шпион',
+          'games.spy.desc': 'Все знают локацию — кроме одного. Вычисли шпиона по ответам, пока он не раскусил, где вы.',
+          'games.spy.teaser': '«Ты вообще в теме? А ну скажи, что мы тут делаем 👀»',
+          'games.spy.tags': ['Мультиплеер', '3+ игрока', 'Блеф'],
+          'games.mafia.title': 'Мафия',
+          'games.mafia.desc': 'Город засыпает — просыпается мафия. День, ночь, голосования и тот самый театр блефа.',
+          'games.mafia.teaser': '«Я мирный, клянусь! Это он подозрительный весь вечер 🎭»',
+          'games.mafia.tags': ['Мультиплеер', 'Ролевая', 'Эмоции'],
+          'games.solo.title': 'Соло-режим',
+          'games.solo.desc': 'Не с кем играть? Sudoku, 2048, Minesweeper, Nonogram и другие — всегда в кармане, даже без сети.',
+          'games.solo.teaser': '«Ещё один уровень — и спать. (Спойлер: не один) 🌙»',
+          'games.solo.tags': ['Sudoku', '2048', 'Minesweeper', '+ещё'],
+          'how.eyebrow': 'Проще простого', 'how.title': 'Как это работает',
+          'how.lead': 'От «давайте во что-нибудь сыграем» до общего смеха — три тапа.',
+          'how.s1.title': 'Создай комнату', 'how.s1.desc': 'Один тап — и лобби готово. Выбери игру и жди своих.',
+          'how.s2.title': 'Зови друзей', 'how.s2.desc': 'Поделись кодом или ссылкой. Все заходят в пару секунд — регистрация не обязательна.',
+          'how.s3.title': 'Играйте вживую', 'how.s3.desc': 'Смех, споры, реванш. А потом ещё разок — «ну последний, обещаю».',
+          'feat.eyebrow': 'Почему MaGame', 'feat.title': 'Сделано, чтобы было тепло и весело',
+          'feat.f1.title': 'Вживую с друзьями', 'feat.f1.desc': 'Реальный мультиплеер в одной комнате. Играйте вместе, где бы вы ни были.',
+          'feat.f2.title': 'Работает оффлайн', 'feat.f2.desc': 'Головоломки на одного не требуют интернета. Прогресс сохраняется и синхронизируется.',
+          'feat.f3.title': 'Лиги и прогресс', 'feat.f3.desc': 'Набирай опыт и поднимайся по лигам — от Rookie до Phantom. Есть к чему стремиться.',
+          'feat.f4.title': 'Без агрессии', 'feat.f4.desc': 'Никаких навязчивых баннеров. Только реклама по желанию — за подсказку, когда сам захочешь.',
+          'vibe.eyebrow': 'Атмосфера', 'vibe.title': 'Примерно так это звучит',
+          'vibe.lead': 'Игра ещё готовится к запуску — а вот вайб, который тебя ждёт.',
+          'vibe.q1.text': '«Не могли остановиться до трёх ночи 😂»', 'vibe.q1.who': '— то самое чувство вечера с MaGame',
+          'vibe.q2.text': '«Я была уверена, что шпион — это он. А шпионом была я 🙈»', 'vibe.q2.who': '— как это обычно и заканчивается',
+          'vibe.q3.text': '«В метро прошёл три уровня судоку и не заметил, как доехал»', 'vibe.q3.who': '— соло-режим, любой свободный момент',
+          'dl.eyebrow': 'Совсем скоро', 'dl.title': 'Собери друзей — будет весело',
+          'dl.lead': 'MaGame готовится к запуску на iOS и Android. Кнопки оживут, как только приложение появится в сторах.',
+          'footer.privacy': 'Privacy Policy', 'footer.contact': 'Контакт', 'footer.copy': '© 2026 MaGame. Сделано с теплотой.',
+          'meta.title': 'MaGame — соберись с друзьями: Шпион, Мафия и головоломки',
+          'meta.desc': 'MaGame — уютная игра для компании. Шпион, Мафия и головоломки на одного (Sudoku, 2048, Minesweeper). Зови друзей — будет весело. Скоро на iOS и Android.'
+        },
+        az: {
+          'nav.games': 'Oyunlar', 'nav.how': 'Necə oynanılır', 'nav.vibe': 'Ab-hava', 'nav.download': 'Yüklə',
+          'hero.pill': '🧸 Sevimli yumşaq oyuncaq kimi rahat',
+          'hero.title': 'Dostlarını topla.<br>Xaosu başlat.',
+          'hero.tagline': 'Casus, Mafiya və təkbaşına tapmacalar. Bütün dəstəni gecəyə kimi güldürən həmin oyun.',
+          'badge.soon': 'Tezliklə',
+          'hero.note': 'Pulsuz · iOS &amp; Android · 13+',
+          'games.eyebrow': 'Nə oynayırıq', 'games.title': 'Ovqatını seç',
+          'games.lead': 'Məclis üçün səs-küylü komanda oyunları — və tək qalmaq istəyəndə sakit tapmacalar.',
+          'games.spy.title': 'Casus',
+          'games.spy.desc': 'Məkanı hamı bilir — biri istisna. O, harada olduğunuzu anlayana qədər cavablardan casusu tap.',
+          'games.spy.teaser': '«Sən ümumiyyətlə mövzudasan? De görək, biz burada nə edirik 👀»',
+          'games.spy.tags': ['Çoxoyunçulu', '3+ oyunçu', 'Blef'],
+          'games.mafia.title': 'Mafiya',
+          'games.mafia.desc': 'Şəhər yuxuya gedir — mafiya oyanır. Gündüz, gecə, səsvermələr və həmin blef teatrı.',
+          'games.mafia.teaser': '«And olsun, mən dincəm! Bütün gecə şübhəli olan odur 🎭»',
+          'games.mafia.tags': ['Çoxoyunçulu', 'Rollu oyun', 'Emosiyalar'],
+          'games.solo.title': 'Tək oyun rejimi',
+          'games.solo.desc': 'Oynamağa kimsə yoxdur? Sudoku, 2048, Minesweeper, Nonogram və başqaları — internet olmadan belə, həmişə cibində.',
+          'games.solo.teaser': '«Bircə mərhələ də — sonra yatmaq. (Spoyler: bircə deyil) 🌙»',
+          'games.solo.tags': ['Sudoku', '2048', 'Minesweeper', '+daha çox'],
+          'how.eyebrow': 'Çox sadədir', 'how.title': 'Necə işləyir',
+          'how.lead': '«Gəlin nəsə oynayaq»dan ümumi gülüşə qədər — üç toxunuş.',
+          'how.s1.title': 'Otaq yarat', 'how.s1.desc': 'Bir toxunuş — lobbi hazırdır. Oyunu seç və dostlarını gözlə.',
+          'how.s2.title': 'Dostlarını dəvət et', 'how.s2.desc': 'Kod və ya keçidlə paylaş. Hamı bir neçə saniyəyə qoşulur — qeydiyyat məcburi deyil.',
+          'how.s3.title': 'Canlı oyna', 'how.s3.desc': 'Gülüş, mübahisə, revanş. Sonra bir də — «sonuncu, söz verirəm».',
+          'feat.eyebrow': 'Niyə MaGame', 'feat.title': 'İsti və əyləncəli olsun deyə hazırlanıb',
+          'feat.f1.title': 'Dostlarla canlı', 'feat.f1.desc': 'Bir otaqda əsl çoxoyunçulu rejim. Harada olsanız da birlikdə oynayın.',
+          'feat.f2.title': 'Oflayn işləyir', 'feat.f2.desc': 'Tək tapmacalar internet tələb etmir. Tərəqqin saxlanılır və sinxronlaşır.',
+          'feat.f3.title': 'Liqalar və tərəqqi', 'feat.f3.desc': 'Təcrübə topla və liqalarda yüksəl — Rookie-dən Phantom-a qədər. Həmişə bir hədəf var.',
+          'feat.f4.title': 'Təzyiqsiz', 'feat.f4.desc': 'Heç bir israrlı banner yoxdur. Yalnız könüllü reklam — istədiyin an, bir ipucu üçün.',
+          'vibe.eyebrow': 'Ab-hava', 'vibe.title': 'Təxminən belə səslənir',
+          'vibe.lead': 'Oyun hələ buraxılışa hazırlaşır — amma səni gözləyən ovqat budur.',
+          'vibe.q1.text': '«Gecə üçə qədər dayana bilmədik 😂»', 'vibe.q1.who': '— MaGame ilə həmin axşam hissi',
+          'vibe.q2.text': '«Əmin idim ki, casus odur. Casus mən imişəm 🙈»', 'vibe.q2.who': '— adətən belə bitir',
+          'vibe.q3.text': '«Metroda üç sudoku mərhələsi keçdim, dayanacağımı qaçırdım»', 'vibe.q3.who': '— tək rejim, hər boş anında',
+          'dl.eyebrow': 'Tezliklə', 'dl.title': 'Dostlarını topla — əyləncəli olacaq',
+          'dl.lead': 'MaGame iOS və Android-də buraxılışa hazırlaşır. Tətbiq mağazalarda görünən kimi düymələr aktivləşəcək.',
+          'footer.privacy': 'Məxfilik Siyasəti', 'footer.contact': 'Əlaqə', 'footer.copy': '© 2026 MaGame. Məhəbbətlə hazırlanıb.',
+          'meta.title': 'MaGame — dostlarını topla: Casus, Mafiya və tapmacalar',
+          'meta.desc': 'MaGame — şirkət üçün rahat oyun. Casus, Mafiya və tək tapmacalar (Sudoku, 2048, Minesweeper). Dostlarını çağır — əyləncəli olacaq. Tezliklə iOS və Android-də.'
+        },
+        en: {
+          'nav.games': 'Games', 'nav.how': 'How to play', 'nav.vibe': 'Vibe', 'nav.download': 'Download',
+          'hero.pill': '🧸 Cozy like your favourite plushie',
+          'hero.title': 'Gather your crew.<br>Start the chaos.',
+          'hero.tagline': 'Spy, Mafia and solo puzzles. The game that keeps your whole crew laughing till midnight.',
+          'badge.soon': 'Soon',
+          'hero.note': 'Free · iOS &amp; Android · 13+',
+          'games.eyebrow': 'What you play', 'games.title': 'Pick your mood',
+          'games.lead': 'Loud party games for the whole crew — and quiet puzzles for when you want some me-time.',
+          'games.spy.title': 'Spy',
+          'games.spy.desc': 'Everyone knows the location — except one. Spot the spy from the answers before they figure out where you are.',
+          'games.spy.teaser': '“Wait, are you even in on this? Tell us where we are 👀”',
+          'games.spy.tags': ['Multiplayer', '3+ players', 'Bluff'],
+          'games.mafia.title': 'Mafia',
+          'games.mafia.desc': 'The town falls asleep — the mafia wakes up. Day, night, votes and all the drama of the bluff.',
+          'games.mafia.teaser': '“I’m innocent, I swear! He’s the suspicious one all night 🎭”',
+          'games.mafia.tags': ['Multiplayer', 'Role-play', 'Drama'],
+          'games.solo.title': 'Solo mode',
+          'games.solo.desc': 'No one to play with? Sudoku, 2048, Minesweeper, Nonogram and more — always in your pocket, even offline.',
+          'games.solo.teaser': '“Just one more level, then bed. (Spoiler: not one) 🌙”',
+          'games.solo.tags': ['Sudoku', '2048', 'Minesweeper', '+more'],
+          'how.eyebrow': 'Couldn’t be simpler', 'how.title': 'How it works',
+          'how.lead': 'From “let’s play something” to everyone laughing — in three taps.',
+          'how.s1.title': 'Create a room', 'how.s1.desc': 'One tap and the lobby’s ready. Pick a game and wait for your crew.',
+          'how.s2.title': 'Invite friends', 'how.s2.desc': 'Share a code or a link. Everyone joins in seconds — no sign-up required.',
+          'how.s3.title': 'Play live', 'how.s3.desc': 'Laughs, arguments, rematch. And then one more — “last one, I promise.”',
+          'feat.eyebrow': 'Why MaGame', 'feat.title': 'Built to feel warm and fun',
+          'feat.f1.title': 'Live with friends', 'feat.f1.desc': 'Real multiplayer in one room. Play together, wherever you are.',
+          'feat.f2.title': 'Works offline', 'feat.f2.desc': 'Solo puzzles need no internet. Your progress is saved and synced.',
+          'feat.f3.title': 'Leagues & progress', 'feat.f3.desc': 'Earn XP and climb the leagues — from Rookie to Phantom. Always something to chase.',
+          'feat.f4.title': 'No aggression', 'feat.f4.desc': 'No pushy banners. Only opt-in ads — for a hint, whenever you choose.',
+          'vibe.eyebrow': 'Vibe', 'vibe.title': 'Here’s how it sounds',
+          'vibe.lead': 'The game is still getting ready to launch — but here’s the vibe waiting for you.',
+          'vibe.q1.text': '“We couldn’t stop until 3 a.m. 😂”', 'vibe.q1.who': '— that classic MaGame night',
+          'vibe.q2.text': '“I was sure he was the spy. Turns out the spy was me 🙈”', 'vibe.q2.who': '— how it usually ends',
+          'vibe.q3.text': '“Did three sudoku levels on the metro and missed my stop”', 'vibe.q3.who': '— solo mode, any spare minute',
+          'dl.eyebrow': 'Coming soon', 'dl.title': 'Gather your friends — it’ll be fun',
+          'dl.lead': 'MaGame is getting ready to launch on iOS and Android. The buttons go live the moment the app hits the stores.',
+          'footer.privacy': 'Privacy Policy', 'footer.contact': 'Contact', 'footer.copy': '© 2026 MaGame. Made with warmth.',
+          'meta.title': 'MaGame — gather your crew: Spy, Mafia & puzzles',
+          'meta.desc': 'MaGame — a cozy party game. Spy, Mafia and solo puzzles (Sudoku, 2048, Minesweeper). Call your friends — it’ll be fun. Coming soon to iOS & Android.'
+        }
+      };
+
+      function detect() {
+        try {
+          var saved = localStorage.getItem(KEY);
+          if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+        } catch (e) {}
+        var langs = navigator.languages || [navigator.language || ''];
+        for (var i = 0; i < langs.length; i++) {
+          var code = (langs[i] || '').slice(0, 2).toLowerCase();
+          if (SUPPORTED.indexOf(code) !== -1) return code;
+        }
+        return FALLBACK;
+      }
+
+      function apply(lang) {
+        var d = DICT[lang] || DICT[FALLBACK];
+        document.documentElement.lang = lang;
+
+        var nodes = document.querySelectorAll('[data-i18n]');
+        for (var i = 0; i < nodes.length; i++) {
+          var k = nodes[i].getAttribute('data-i18n');
+          if (d[k] != null) nodes[i].innerHTML = d[k];
+        }
+        var tagEls = document.querySelectorAll('[data-i18n-tags]');
+        for (var j = 0; j < tagEls.length; j++) {
+          var arr = d[tagEls[j].getAttribute('data-i18n-tags')];
+          if (arr && arr.length) {
+            var html = '';
+            for (var t = 0; t < arr.length; t++) html += '<span>' + arr[t] + '</span>';
+            tagEls[j].innerHTML = html;
+          }
+        }
+        if (d['meta.title']) document.title = d['meta.title'];
+        var md = document.querySelector('meta[name="description"]');
+        if (md && d['meta.desc']) md.setAttribute('content', d['meta.desc']);
+
+        var btns = document.querySelectorAll('.lang-switch button');
+        for (var b = 0; b < btns.length; b++) {
+          var on = btns[b].getAttribute('data-lang') === lang;
+          btns[b].classList.toggle('is-active', on);
+          btns[b].setAttribute('aria-pressed', on ? 'true' : 'false');
+        }
+        try { localStorage.setItem(KEY, lang); } catch (e) {}
+      }
+
+      var current = detect();
+      function run() { apply(current); }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', run);
+      } else { run(); }
+
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest ? e.target.closest('.lang-switch button') : null;
+        if (!btn) return;
+        var lang = btn.getAttribute('data-lang');
+        if (SUPPORTED.indexOf(lang) !== -1) apply(lang);
+      });
+    })();
+  </script>
 
   <!-- ===================== Scroll reveal (vanilla, ~0.5KB) ===================== -->
   <script>

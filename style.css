@@ -192,6 +192,28 @@ h1, h2, h3 { line-height: 1.15; font-weight: 800; letter-spacing: -0.02em; }
 .nav-links a:hover { color: var(--text); }
 @media (max-width: 680px) { .nav-links { display: none; } }
 
+/* ---------- Language switcher ---------- */
+.lang-switch {
+  display: inline-flex; gap: 2px; padding: 3px;
+  border-radius: 999px;
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+.lang-switch button {
+  appearance: none; -webkit-appearance: none; border: none;
+  background: transparent; color: var(--text-muted);
+  font: inherit; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em;
+  padding: 6px 11px; border-radius: 999px; cursor: pointer; line-height: 1;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.lang-switch button:hover { color: var(--text); }
+.lang-switch button.is-active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 4px 14px rgba(124, 106, 255, 0.35);
+}
+
 /* ---------- Floating decorative blobs (GPU-only: transform/opacity) ---------- */
 .blob {
   position: absolute;
