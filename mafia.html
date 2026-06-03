@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мафия — Ma Game</title>
+  <meta name="description" content="Мафия в Ma Game: 7 ролей (Дон, Шериф, Доктор, Дама, Камикадзе и др.), ночь и день, блеф и голосования. Узнай роли и правила." />
+  <meta name="theme-color" content="#100C18" />
+  <link rel="canonical" href="https://magame.app/mafia.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Ma Game">
+        <img class="logo" src="assets/app-icon.webp" alt="" width="34" height="34" /> Ma Game
+      </a>
+      <nav class="nav-links" aria-label="Menu">
+        <a href="index.html#games" data-i18n="nav.allgames">Все игры</a>
+        <a href="index.html#download" data-i18n="nav.download">Скачать</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Язык / Language / Dil">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="az" aria-pressed="false">AZ</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+    <a class="back-link" href="index.html" data-i18n="nav.back">← На главную</a>
+
+    <!-- Hero -->
+    <section class="game-hero">
+      <span class="blob b1" aria-hidden="true"></span>
+      <span class="blob b2" aria-hidden="true"></span>
+      <span class="game-emoji" aria-hidden="true">🎭</span>
+      <h1 data-i18n="m.title">Мафия</h1>
+      <p class="lead" data-i18n="m.lead">Город засыпает — просыпается мафия. Днём ищем виноватых, ночью вершится судьба. Кто переиграет кого?</p>
+      <div class="meta-pills">
+        <span class="pill" data-i18n="m.pill.players"><b>4–20</b>&nbsp;игроков</span>
+        <span class="pill" data-i18n="m.pill.phases">🌙 Ночь&nbsp;и&nbsp;☀️ День</span>
+        <span class="pill" data-i18n="m.pill.roles"><b>7</b>&nbsp;ролей</span>
+      </div>
+    </section>
+
+    <!-- Roles -->
+    <section class="section" style="padding-top: clamp(30px,5vw,60px);">
+      <div class="text-center">
+        <span class="eyebrow" data-i18n="m.roles.eyebrow">Знакомься с командой</span>
+        <h2 class="section-title" data-i18n="m.roles.title">Семь ролей</h2>
+        <p class="section-lead" data-i18n="m.roles.lead">Нажми на карточку, чтобы узнать, на что способна каждая роль.</p>
+      </div>
+      <div class="role-grid" id="roleGrid"></div>
+      <div class="legend">
+        <span><i style="background:#34C759"></i> <span data-i18n="team.town">Город</span></span>
+        <span><i style="background:#FF4D4D"></i> <span data-i18n="team.mafia">Мафия</span></span>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+      <div class="text-center">
+        <span class="eyebrow" data-i18n="m.how.eyebrow">Один круг игры</span>
+        <h2 class="section-title" data-i18n="m.how.title">Как проходит партия</h2>
+      </div>
+      <div class="flow">
+        <article class="card">
+          <div class="step-num">1</div>
+          <h3 data-i18n="m.s1.title">Раздача ролей</h3>
+          <p data-i18n="m.s1.desc">Каждый тайно узнаёт свою роль. Мафия запоминает своих — остальные пока в неведении.</p>
+        </article>
+        <article class="card">
+          <div class="step-num">2</div>
+          <h3 data-i18n="m.s2.title">Ночь</h3>
+          <p data-i18n="m.s2.desc">Город спит. Мафия выбирает жертву, Доктор лечит, Шериф проверяет, Дама блокирует.</p>
+        </article>
+        <article class="card">
+          <div class="step-num">3</div>
+          <h3 data-i18n="m.s3.title">День</h3>
+          <p data-i18n="m.s3.desc">Все просыпаются и узнают итоги ночи. Обсуждение, обвинения и голосование за казнь.</p>
+        </article>
+        <article class="card">
+          <div class="step-num">4</div>
+          <h3 data-i18n="m.s4.title">Развязка</h3>
+          <p data-i18n="m.s4.desc">Город побеждает, когда мафии не осталось. Мафия — когда их становится большинство.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section download">
+      <div class="card">
+        <picture>
+          <source srcset="assets/app-icon.webp" type="image/webp" />
+          <img class="download-logo" src="assets/icon-192.png" alt="Ma Game" width="96" height="96" />
+        </picture>
+        <h2 class="section-title" data-i18n="cta.title">Собери компанию — будет жарко</h2>
+        <p class="section-lead" data-i18n="cta.lead">Мафия и другие игры скоро на iOS и Android.</p>
+        <div class="store-buttons">
+          <a class="btn btn-primary" href="#" aria-disabled="true"> App Store <span class="badge" data-i18n="badge.soon">Скоро</span></a>
+          <a class="btn btn-ghost" href="#" aria-disabled="true">▶ Google Play <span class="badge" data-i18n="badge.soon">Скоро</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><img class="logo" src="assets/app-icon.webp" alt="" width="34" height="34" /> Ma Game</a>
+      <nav class="footer-links">
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="mailto:mahammadalipashayev@gmail.com" data-i18n="footer.contact">Контакт</a>
+      </nav>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 Ma Game. Сделано с теплотой.</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" aria-label="Наверх">↑</a>
+
+  <script>
+    window.I18N = {
+      ru: {
+        'nav.allgames': 'Все игры', 'nav.download': 'Скачать', 'nav.back': '← На главную', 'badge.soon': 'Скоро',
+        'm.title': 'Мафия',
+        'm.lead': 'Город засыпает — просыпается мафия. Днём ищем виноватых, ночью вершится судьба. Кто переиграет кого?',
+        'm.pill.players': '<b>4–20</b>&nbsp;игроков', 'm.pill.phases': '🌙 Ночь&nbsp;и&nbsp;☀️ День', 'm.pill.roles': '<b>7</b>&nbsp;ролей',
+        'm.roles.eyebrow': 'Знакомься с командой', 'm.roles.title': 'Семь ролей',
+        'm.roles.lead': 'Нажми на карточку, чтобы узнать, на что способна каждая роль.',
+        'm.how.eyebrow': 'Один круг игры', 'm.how.title': 'Как проходит партия',
+        'm.s1.title': 'Раздача ролей', 'm.s1.desc': 'Каждый тайно узнаёт свою роль. Мафия запоминает своих — остальные пока в неведении.',
+        'm.s2.title': 'Ночь', 'm.s2.desc': 'Город спит. Мафия выбирает жертву, Доктор лечит, Шериф проверяет, Дама блокирует.',
+        'm.s3.title': 'День', 'm.s3.desc': 'Все просыпаются и узнают итоги ночи. Обсуждение, обвинения и голосование за казнь.',
+        'm.s4.title': 'Развязка', 'm.s4.desc': 'Город побеждает, когда мафии не осталось. Мафия — когда их становится большинство.',
+        'team.town': 'Город', 'team.mafia': 'Мафия',
+        'role.civilian.name': 'Мирный', 'role.civilian.ability': 'Голосуй днём, чтобы вычислить мафию. Твоё оружие — логика и большинство.',
+        'role.mafia.name': 'Мафия', 'role.mafia.ability': 'Ночью вместе с командой выбираешь, кого убрать. Днём прикидывайся своим.',
+        'role.don.name': 'Дон', 'role.don.ability': 'Главарь мафии. Шериф при проверке видит тебя «честным» — пользуйся.',
+        'role.sheriff.name': 'Шериф', 'role.sheriff.ability': 'Ночью проверяешь одного игрока: мафия он или мирный. Веди город к правде.',
+        'role.doctor.name': 'Доктор', 'role.doctor.ability': 'Ночью лечишь одного — спасаешь его от убийства. Можно и самого себя.',
+        'role.lady.name': 'Дама', 'role.lady.ability': 'Ночью блокируешь игрока — на следующий день он не сможет голосовать.',
+        'role.kamikaze.name': 'Камикадзе', 'role.kamikaze.ability': 'Если тебя казнят днём — забираешь одного игрока с собой. Месть до конца.',
+        'role.flip': 'Нажми →',
+        'cta.title': 'Собери компанию — будет жарко', 'cta.lead': 'Мафия и другие игры скоро на iOS и Android.',
+        'footer.privacy': 'Privacy Policy', 'footer.contact': 'Контакт', 'footer.copy': '© 2026 Ma Game. Сделано с теплотой.',
+        'meta.title': 'Мафия — Ma Game',
+        'meta.desc': 'Мафия в Ma Game: 7 ролей (Дон, Шериф, Доктор, Дама, Камикадзе и др.), ночь и день, блеф и голосования.'
+      },
+      az: {
+        'nav.allgames': 'Bütün oyunlar', 'nav.download': 'Yüklə', 'nav.back': '← Ana səhifə', 'badge.soon': 'Tezliklə',
+        'm.title': 'Mafiya',
+        'm.lead': 'Şəhər yuxuya gedir — mafiya oyanır. Gündüz təqsirkar axtarırıq, gecə tale həll olur. Kim kimi aldadacaq?',
+        'm.pill.players': '<b>4–20</b>&nbsp;oyunçu', 'm.pill.phases': '🌙 Gecə&nbsp;və&nbsp;☀️ Gündüz', 'm.pill.roles': '<b>7</b>&nbsp;rol',
+        'm.roles.eyebrow': 'Komanda ilə tanış ol', 'm.roles.title': 'Yeddi rol',
+        'm.roles.lead': 'Hər rolun nə bacardığını görmək üçün karta toxun.',
+        'm.how.eyebrow': 'Bir oyun dövrəsi', 'm.how.title': 'Partiya necə gedir',
+        'm.s1.title': 'Rolların paylanması', 'm.s1.desc': 'Hər kəs gizlicə öz rolunu öyrənir. Mafiya öz adamlarını yadda saxlayır — qalanları hələ bixəbərdir.',
+        'm.s2.title': 'Gecə', 'm.s2.desc': 'Şəhər yatır. Mafiya qurban seçir, Həkim sağaldır, Şerif yoxlayır, Xanım bloklayır.',
+        'm.s3.title': 'Gündüz', 'm.s3.desc': 'Hamı oyanır və gecənin nəticələrini öyrənir. Müzakirə, ittihamlar və edam üçün səsvermə.',
+        'm.s4.title': 'Final', 'm.s4.desc': 'Mafiya qalmayanda şəhər qalib gəlir. Mafiya isə çoxluq olduqda.',
+        'team.town': 'Şəhər', 'team.mafia': 'Mafiya',
+        'role.civilian.name': 'Dinc sakin', 'role.civilian.ability': 'Mafiyanı tapmaq üçün gündüz səs ver. Silahın — məntiq və çoxluq.',
+        'role.mafia.name': 'Mafiya', 'role.mafia.ability': 'Gecə komanda ilə kimi aradan götürəcəyini seçirsən. Gündüz özünü dinc göstər.',
+        'role.don.name': 'Don', 'role.don.ability': 'Mafiyanın başçısı. Şerif yoxlayanda səni «dinc» görür — bundan istifadə et.',
+        'role.sheriff.name': 'Şerif', 'role.sheriff.ability': 'Gecə bir oyunçunu yoxlayırsan: mafiyadır, yoxsa dinc. Şəhəri həqiqətə apar.',
+        'role.doctor.name': 'Həkim', 'role.doctor.ability': 'Gecə birini sağaldırsan — onu ölümdən qurtarırsan. Özünü də olar.',
+        'role.lady.name': 'Xanım', 'role.lady.ability': 'Gecə bir oyunçunu bloklayırsan — ertəsi gün o, səs verə bilmir.',
+        'role.kamikaze.name': 'Kamikadze', 'role.kamikaze.ability': 'Səni gündüz edam etsələr — bir oyunçunu özünlə aparırsan. Sona qədər qisas.',
+        'role.flip': 'Toxun →',
+        'cta.title': 'Dəstəni topla — qaynar olacaq', 'cta.lead': 'Mafiya və digər oyunlar tezliklə iOS və Android-də.',
+        'footer.privacy': 'Məxfilik Siyasəti', 'footer.contact': 'Əlaqə', 'footer.copy': '© 2026 Ma Game. Məhəbbətlə hazırlanıb.',
+        'meta.title': 'Mafiya — Ma Game',
+        'meta.desc': 'Ma Game-də Mafiya: 7 rol (Don, Şerif, Həkim, Xanım, Kamikadze və s.), gecə və gündüz, blef və səsvermələr.'
+      },
+      en: {
+        'nav.allgames': 'All games', 'nav.download': 'Download', 'nav.back': '← Home', 'badge.soon': 'Soon',
+        'm.title': 'Mafia',
+        'm.lead': 'The town falls asleep — the mafia wakes up. By day you hunt the guilty, by night fate is sealed. Who outplays whom?',
+        'm.pill.players': '<b>4–20</b>&nbsp;players', 'm.pill.phases': '🌙 Night&nbsp;&amp;&nbsp;☀️ Day', 'm.pill.roles': '<b>7</b>&nbsp;roles',
+        'm.roles.eyebrow': 'Meet the cast', 'm.roles.title': 'Seven roles',
+        'm.roles.lead': 'Tap a card to see what each role can do.',
+        'm.how.eyebrow': 'One game loop', 'm.how.title': 'How a round plays out',
+        'm.s1.title': 'Deal the roles', 'm.s1.desc': 'Everyone secretly learns their role. The mafia memorise their team — everyone else is still in the dark.',
+        'm.s2.title': 'Night', 'm.s2.desc': 'The town sleeps. The mafia picks a victim, the Doctor heals, the Sheriff checks, the Lady blocks.',
+        'm.s3.title': 'Day', 'm.s3.desc': 'Everyone wakes to the night’s results. Discussion, accusations and a vote to execute.',
+        'm.s4.title': 'The finish', 'm.s4.desc': 'The town wins when no mafia remain. The mafia win once they hold the majority.',
+        'team.town': 'Town', 'team.mafia': 'Mafia',
+        'role.civilian.name': 'Civilian', 'role.civilian.ability': 'Vote during the day to root out the mafia. Your weapons: logic and the majority.',
+        'role.mafia.name': 'Mafia', 'role.mafia.ability': 'At night you and your team pick who to take out. By day, blend in.',
+        'role.don.name': 'Don', 'role.don.ability': 'The mafia boss. The Sheriff’s check shows you as “innocent” — use it.',
+        'role.sheriff.name': 'Sheriff', 'role.sheriff.ability': 'Each night you check one player: mafia or innocent. Lead the town to the truth.',
+        'role.doctor.name': 'Doctor', 'role.doctor.ability': 'At night you heal one player — saving them from a kill. Yourself counts too.',
+        'role.lady.name': 'Lady', 'role.lady.ability': 'At night you block a player — the next day they can’t vote.',
+        'role.kamikaze.name': 'Kamikaze', 'role.kamikaze.ability': 'If you’re executed by day — you take one player down with you. Revenge to the end.',
+        'role.flip': 'Tap →',
+        'cta.title': 'Gather your crew — it’s going to be intense', 'cta.lead': 'Mafia and more games coming soon to iOS and Android.',
+        'footer.privacy': 'Privacy Policy', 'footer.contact': 'Contact', 'footer.copy': '© 2026 Ma Game. Made with warmth.',
+        'meta.title': 'Mafia — Ma Game',
+        'meta.desc': 'Mafia in Ma Game: 7 roles (Don, Sheriff, Doctor, Lady, Kamikaze and more), night and day, bluff and voting.'
+      }
+    };
+  </script>
+  <script src="i18n.js" defer></script>
+
+  <script>
+    (function () {
+      var ROLES = [
+        { id: 'civilian', e: '👤', color: '#9AA0B5', team: 'town' },
+        { id: 'mafia',    e: '🔫', color: '#FF4D4D', team: 'mafia' },
+        { id: 'don',      e: '🎩', color: '#B00000', team: 'mafia' },
+        { id: 'sheriff',  e: '🔍', color: '#4A86FF', team: 'town' },
+        { id: 'doctor',   e: '💊', color: '#34C759', team: 'town' },
+        { id: 'lady',     e: '💋', color: '#FF6DAE', team: 'town' },
+        { id: 'kamikaze', e: '💥', color: '#FF9F0A', team: 'mafia' }
+      ];
+
+      function render() {
+        var t = (window.MaGameI18N && window.MaGameI18N.t) ? window.MaGameI18N.t : function () { return ''; };
+        var grid = document.getElementById('roleGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        ROLES.forEach(function (r) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'role-card';
+          btn.style.setProperty('--role', r.color);
+          btn.setAttribute('aria-label', t('role.' + r.id + '.name') || r.id);
+          btn.innerHTML =
+            '<div class="role-card-inner">' +
+              '<div class="role-face front">' +
+                '<div class="role-emoji">' + r.e + '</div>' +
+                '<div class="role-name">' + (t('role.' + r.id + '.name') || '') + '</div>' +
+                '<div class="role-team">' + (t('team.' + r.team) || '') + '</div>' +
+                '<div class="role-hint">' + (t('role.flip') || '') + '</div>' +
+              '</div>' +
+              '<div class="role-face back">' +
+                '<div class="role-emoji">' + r.e + '</div>' +
+                '<div class="role-name">' + (t('role.' + r.id + '.name') || '') + '</div>' +
+                '<p class="role-ability">' + (t('role.' + r.id + '.ability') || '') + '</p>' +
+              '</div>' +
+            '</div>';
+          btn.addEventListener('click', function () { btn.classList.toggle('flipped'); });
+          grid.appendChild(btn);
+        });
+      }
+
+      // initial + on every language change
+      document.addEventListener('i18n:applied', render);
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render);
+      else render();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Соло-режим — Ma Game</title>
+  <meta name="description" content="Соло-режим Ma Game: 7 головоломок (Судоку, 2048, Сапёр, Нонограмма, Какуро, Хитори, Нумберлинк) и лиги от Новичка до Фантома. Играй оффлайн." />
+  <meta name="theme-color" content="#100C18" />
+  <link rel="canonical" href="https://magame.app/solo.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Ma Game">
+        <img class="logo" src="assets/app-icon.webp" alt="" width="34" height="34" /> Ma Game
+      </a>
+      <nav class="nav-links" aria-label="Menu">
+        <a href="index.html#games" data-i18n="nav.allgames">Все игры</a>
+        <a href="index.html#download" data-i18n="nav.download">Скачать</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Язык / Language / Dil">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="az" aria-pressed="false">AZ</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+    <a class="back-link" href="index.html" data-i18n="nav.back">← На главную</a>
+
+    <section class="game-hero">
+      <span class="blob b1" aria-hidden="true"></span>
+      <span class="blob b2" aria-hidden="true"></span>
+      <span class="game-emoji" aria-hidden="true">🎮</span>
+      <h1 data-i18n="o.title">Соло-режим</h1>
+      <p class="lead" data-i18n="o.lead">Семь головоломок на любой момент — в метро, в очереди или перед сном. Работают оффлайн, прогресс сохраняется.</p>
+      <div class="meta-pills">
+        <span class="pill" data-i18n="o.pill.games"><b>7</b>&nbsp;головоломок</span>
+        <span class="pill" data-i18n="o.pill.offline">✈️ Оффлайн</span>
+        <span class="pill" data-i18n="o.pill.leagues"><b>5</b>&nbsp;лиг</span>
+      </div>
+    </section>
+
+    <!-- Games gallery -->
+    <section class="section" style="padding-top: clamp(24px,4vw,48px);">
+      <div class="text-center">
+        <span class="eyebrow" data-i18n="o.games.eyebrow">Выбирай по настроению</span>
+        <h2 class="section-title" data-i18n="o.games.title">Семь головоломок</h2>
+        <p class="section-lead" data-i18n="o.games.lead">От классики до редких логических игр — каждая с уровнями сложности от Tutorial до Master.</p>
+      </div>
+      <div class="solo-grid">
+        <div class="solo-tile"><div class="e">🔢</div><h3 data-i18n="o.sudoku.name">Судоку</h3><p data-i18n="o.sudoku.desc">Заполни сетку 9×9 так, чтобы цифры не повторялись.</p></div>
+        <div class="solo-tile"><div class="e">🟢</div><h3 data-i18n="o.2048.name">2048</h3><p data-i18n="o.2048.desc">Объединяй плитки, пока не доберёшься до 2048.</p></div>
+        <div class="solo-tile"><div class="e">💣</div><h3 data-i18n="o.mine.name">Сапёр</h3><p data-i18n="o.mine.desc">Открой все клетки, не наступив на мину.</p></div>
+        <div class="solo-tile"><div class="e">🖼️</div><h3 data-i18n="o.nono.name">Нонограмма</h3><p data-i18n="o.nono.desc">Закрашивай клетки по числам — и проявляй картинку.</p></div>
+        <div class="solo-tile"><div class="e">➕</div><h3 data-i18n="o.kakuro.name">Какуро</h3><p data-i18n="o.kakuro.desc">Кроссворд с числами: суммы должны сходиться.</p></div>
+        <div class="solo-tile"><div class="e">⬛</div><h3 data-i18n="o.hitori.name">Хитори</h3><p data-i18n="o.hitori.desc">Затемняй клетки, чтобы убрать повторы в рядах.</p></div>
+        <div class="solo-tile"><div class="e">🔗</div><h3 data-i18n="o.numlink.name">Нумберлинк</h3><p data-i18n="o.numlink.desc">Соедини одинаковые числа линиями, не пересекая их.</p></div>
+      </div>
+    </section>
+
+    <!-- League ladder -->
+    <section class="section">
+      <div class="text-center">
+        <span class="eyebrow" data-i18n="o.league.eyebrow">Прогрессия</span>
+        <h2 class="section-title" data-i18n="o.league.title">Поднимайся по лигам</h2>
+        <p class="section-lead" data-i18n="o.league.lead">Решай головоломки, набирай опыт и расти от Новичка до легендарного Фантома.</p>
+      </div>
+      <div class="league-ladder">
+        <div class="league-row" style="--tier:#9999A6"><span class="e">🎯</span><span class="name" data-i18n="league.rookie">Новичок</span><span class="rng" data-i18n="o.lvl12">Уровни 1–2</span></div>
+        <div class="league-row" style="--tier:#4285F5"><span class="e">🛡️</span><span class="name" data-i18n="league.expert">Эксперт</span><span class="rng" data-i18n="o.lvl34">Уровни 3–4</span></div>
+        <div class="league-row" style="--tier:#9933E6"><span class="e">🔮</span><span class="name" data-i18n="league.master">Мастер</span><span class="rng" data-i18n="o.lvl56">Уровни 5–6</span></div>
+        <div class="league-row" style="--tier:#FFD600"><span class="e">⭐</span><span class="name" data-i18n="league.legend">Легенда</span><span class="rng" data-i18n="o.lvl78">Уровни 7–8</span></div>
+        <div class="league-row" style="--tier:#FF5433"><span class="e">👻</span><span class="name" data-i18n="league.phantom">Фантом</span><span class="rng" data-i18n="o.lvl910">Уровни 9–10+</span></div>
+      </div>
+    </section>
+
+    <section class="section download">
+      <div class="card">
+        <picture><source srcset="assets/app-icon.webp" type="image/webp" /><img class="download-logo" src="assets/icon-192.png" alt="Ma Game" width="96" height="96" /></picture>
+        <h2 class="section-title" data-i18n="cta.title">Твоя головоломка ждёт</h2>
+        <p class="section-lead" data-i18n="cta.lead">Соло-режим и другие игры скоро на iOS и Android.</p>
+        <div class="store-buttons">
+          <a class="btn btn-primary" href="#" aria-disabled="true"> App Store <span class="badge" data-i18n="badge.soon">Скоро</span></a>
+          <a class="btn btn-ghost" href="#" aria-disabled="true">▶ Google Play <span class="badge" data-i18n="badge.soon">Скоро</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><img class="logo" src="assets/app-icon.webp" alt="" width="34" height="34" /> Ma Game</a>
+      <nav class="footer-links">
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="mailto:mahammadalipashayev@gmail.com" data-i18n="footer.contact">Контакт</a>
+      </nav>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 Ma Game. Сделано с теплотой.</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" aria-label="Наверх">↑</a>
+
+  <script>
+    window.I18N = {
+      ru: {
+        'nav.allgames': 'Все игры', 'nav.download': 'Скачать', 'nav.back': '← На главную', 'badge.soon': 'Скоро',
+        'o.title': 'Соло-режим',
+        'o.lead': 'Семь головоломок на любой момент — в метро, в очереди или перед сном. Работают оффлайн, прогресс сохраняется.',
+        'o.pill.games': '<b>7</b>&nbsp;головоломок', 'o.pill.offline': '✈️ Оффлайн', 'o.pill.leagues': '<b>5</b>&nbsp;лиг',
+        'o.games.eyebrow': 'Выбирай по настроению', 'o.games.title': 'Семь головоломок',
+        'o.games.lead': 'От классики до редких логических игр — каждая с уровнями сложности от Tutorial до Master.',
+        'o.sudoku.name': 'Судоку', 'o.sudoku.desc': 'Заполни сетку 9×9 так, чтобы цифры не повторялись.',
+        'o.2048.name': '2048', 'o.2048.desc': 'Объединяй плитки, пока не доберёшься до 2048.',
+        'o.mine.name': 'Сапёр', 'o.mine.desc': 'Открой все клетки, не наступив на мину.',
+        'o.nono.name': 'Нонограмма', 'o.nono.desc': 'Закрашивай клетки по числам — и проявляй картинку.',
+        'o.kakuro.name': 'Какуро', 'o.kakuro.desc': 'Кроссворд с числами: суммы должны сходиться.',
+        'o.hitori.name': 'Хитори', 'o.hitori.desc': 'Затемняй клетки, чтобы убрать повторы в рядах.',
+        'o.numlink.name': 'Нумберлинк', 'o.numlink.desc': 'Соедини одинаковые числа линиями, не пересекая их.',
+        'o.league.eyebrow': 'Прогрессия', 'o.league.title': 'Поднимайся по лигам',
+        'o.league.lead': 'Решай головоломки, набирай опыт и расти от Новичка до легендарного Фантома.',
+        'league.rookie': 'Новичок', 'league.expert': 'Эксперт', 'league.master': 'Мастер', 'league.legend': 'Легенда', 'league.phantom': 'Фантом',
+        'o.lvl12': 'Уровни 1–2', 'o.lvl34': 'Уровни 3–4', 'o.lvl56': 'Уровни 5–6', 'o.lvl78': 'Уровни 7–8', 'o.lvl910': 'Уровни 9–10+',
+        'cta.title': 'Твоя головоломка ждёт', 'cta.lead': 'Соло-режим и другие игры скоро на iOS и Android.',
+        'footer.privacy': 'Privacy Policy', 'footer.contact': 'Контакт', 'footer.copy': '© 2026 Ma Game. Сделано с теплотой.',
+        'meta.title': 'Соло-режим — Ma Game',
+        'meta.desc': 'Соло-режим Ma Game: 7 головоломок (Судоку, 2048, Сапёр, Нонограмма, Какуро, Хитори, Нумберлинк) и лиги от Новичка до Фантома.'
+      },
+      az: {
+        'nav.allgames': 'Bütün oyunlar', 'nav.download': 'Yüklə', 'nav.back': '← Ana səhifə', 'badge.soon': 'Tezliklə',
+        'o.title': 'Tək oyun rejimi',
+        'o.lead': 'Hər an üçün yeddi tapmaca — metroda, növbədə və ya yatmazdan əvvəl. Oflayn işləyir, tərəqqi saxlanılır.',
+        'o.pill.games': '<b>7</b>&nbsp;tapmaca', 'o.pill.offline': '✈️ Oflayn', 'o.pill.leagues': '<b>5</b>&nbsp;liqa',
+        'o.games.eyebrow': 'Ovqatına görə seç', 'o.games.title': 'Yeddi tapmaca',
+        'o.games.lead': 'Klassikadan nadir məntiq oyunlarına qədər — hər biri Tutorial-dan Master-ə qədər çətinlik səviyyələri ilə.',
+        'o.sudoku.name': 'Sudoku', 'o.sudoku.desc': '9×9 şəbəkəni rəqəmlər təkrarlanmayacaq şəkildə doldur.',
+        'o.2048.name': '2048', 'o.2048.desc': '2048-ə çatana qədər plitələri birləşdir.',
+        'o.mine.name': 'Mina axtaran', 'o.mine.desc': 'Minaya basmadan bütün xanaları aç.',
+        'o.nono.name': 'Nonoqram', 'o.nono.desc': 'Rəqəmlərə görə xanaları boya — və şəkli aşkar et.',
+        'o.kakuro.name': 'Kakuro', 'o.kakuro.desc': 'Rəqəmlərlə skanvord: cəmlər uyğun gəlməlidir.',
+        'o.hitori.name': 'Hitori', 'o.hitori.desc': 'Sıralarda təkrarları silmək üçün xanaları qaralt.',
+        'o.numlink.name': 'Numberlink', 'o.numlink.desc': 'Eyni rəqəmləri kəsişmədən xətlərlə birləşdir.',
+        'o.league.eyebrow': 'Tərəqqi', 'o.league.title': 'Liqalarda yüksəl',
+        'o.league.lead': 'Tapmacalar həll et, təcrübə topla və Yeni başlayandan əfsanəvi Fantoma qədər böyü.',
+        'league.rookie': 'Yeni başlayan', 'league.expert': 'Ekspert', 'league.master': 'Usta', 'league.legend': 'Əfsanə', 'league.phantom': 'Fantom',
+        'o.lvl12': 'Səviyyə 1–2', 'o.lvl34': 'Səviyyə 3–4', 'o.lvl56': 'Səviyyə 5–6', 'o.lvl78': 'Səviyyə 7–8', 'o.lvl910': 'Səviyyə 9–10+',
+        'cta.title': 'Tapmacan səni gözləyir', 'cta.lead': 'Tək oyun rejimi və digər oyunlar tezliklə iOS və Android-də.',
+        'footer.privacy': 'Məxfilik Siyasəti', 'footer.contact': 'Əlaqə', 'footer.copy': '© 2026 Ma Game. Məhəbbətlə hazırlanıb.',
+        'meta.title': 'Tək oyun rejimi — Ma Game',
+        'meta.desc': 'Ma Game tək rejim: 7 tapmaca (Sudoku, 2048, Mina axtaran, Nonoqram, Kakuro, Hitori, Numberlink) və Yeni başlayandan Fantoma qədər liqalar.'
+      },
+      en: {
+        'nav.allgames': 'All games', 'nav.download': 'Download', 'nav.back': '← Home', 'badge.soon': 'Soon',
+        'o.title': 'Solo mode',
+        'o.lead': 'Seven puzzles for any moment — on the metro, in a queue or before bed. They work offline and your progress is saved.',
+        'o.pill.games': '<b>7</b>&nbsp;puzzles', 'o.pill.offline': '✈️ Offline', 'o.pill.leagues': '<b>5</b>&nbsp;leagues',
+        'o.games.eyebrow': 'Pick by mood', 'o.games.title': 'Seven puzzles',
+        'o.games.lead': 'From classics to rare logic games — each with difficulty levels from Tutorial to Master.',
+        'o.sudoku.name': 'Sudoku', 'o.sudoku.desc': 'Fill the 9×9 grid so no digit repeats.',
+        'o.2048.name': '2048', 'o.2048.desc': 'Merge the tiles until you reach 2048.',
+        'o.mine.name': 'Minesweeper', 'o.mine.desc': 'Clear every cell without stepping on a mine.',
+        'o.nono.name': 'Nonogram', 'o.nono.desc': 'Fill cells by the numbers — and reveal the picture.',
+        'o.kakuro.name': 'Kakuro', 'o.kakuro.desc': 'A number crossword: the sums have to add up.',
+        'o.hitori.name': 'Hitori', 'o.hitori.desc': 'Shade cells to remove duplicates in each row.',
+        'o.numlink.name': 'Numberlink', 'o.numlink.desc': 'Connect matching numbers with lines that never cross.',
+        'o.league.eyebrow': 'Progression', 'o.league.title': 'Climb the leagues',
+        'o.league.lead': 'Solve puzzles, earn XP and grow from Rookie to the legendary Phantom.',
+        'league.rookie': 'Rookie', 'league.expert': 'Expert', 'league.master': 'Master', 'league.legend': 'Legend', 'league.phantom': 'Phantom',
+        'o.lvl12': 'Levels 1–2', 'o.lvl34': 'Levels 3–4', 'o.lvl56': 'Levels 5–6', 'o.lvl78': 'Levels 7–8', 'o.lvl910': 'Levels 9–10+',
+        'cta.title': 'Your puzzle is waiting', 'cta.lead': 'Solo mode and more games coming soon to iOS and Android.',
+        'footer.privacy': 'Privacy Policy', 'footer.contact': 'Contact', 'footer.copy': '© 2026 Ma Game. Made with warmth.',
+        'meta.title': 'Solo mode — Ma Game',
+        'meta.desc': 'Ma Game solo mode: 7 puzzles (Sudoku, 2048, Minesweeper, Nonogram, Kakuro, Hitori, Numberlink) and leagues from Rookie to Phantom.'
+      }
+    };
+  </script>
+  <script src="i18n.js" defer></script>
+</body>
+</html>

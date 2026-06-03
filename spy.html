@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Шпион — Ma Game</title>
+  <meta name="description" content="Шпион в Ma Game: все знают секретного персонажа, кроме одного. 8 категорий, 3 раунда, голосование. Попробуй демо-раздачу ролей." />
+  <meta name="theme-color" content="#100C18" />
+  <link rel="canonical" href="https://magame.app/spy.html" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Ma Game">
+        <img class="logo" src="assets/app-icon.webp" alt="" width="34" height="34" /> Ma Game
+      </a>
+      <nav class="nav-links" aria-label="Menu">
+        <a href="index.html#games" data-i18n="nav.allgames">Все игры</a>
+        <a href="index.html#download" data-i18n="nav.download">Скачать</a>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Язык / Language / Dil">
+        <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button type="button" data-lang="az" aria-pressed="false">AZ</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+    <a class="back-link" href="index.html" data-i18n="nav.back">← На главную</a>
+
+    <section class="game-hero">
+      <span class="blob b1" aria-hidden="true"></span>
+      <span class="blob b2" aria-hidden="true"></span>
+      <span class="game-emoji" aria-hidden="true">🕵️</span>
+      <h1 data-i18n="s.title">Шпион</h1>
+      <p class="lead" data-i18n="s.lead">Все знают секретного персонажа — кроме одного. Шпион блефует, остальные пытаются его вычислить по ответам.</p>
+      <div class="meta-pills">
+        <span class="pill" data-i18n="s.pill.players"><b>3–12</b>&nbsp;игроков</span>
+        <span class="pill" data-i18n="s.pill.rounds"><b>3</b>&nbsp;раунда</span>
+        <span class="pill" data-i18n="s.pill.timer">⏱ 90&nbsp;сек&nbsp;на&nbsp;раунд</span>
+      </div>
+    </section>
+
+    <!-- Interactive demo -->
+    <section class="section" style="padding-top: clamp(24px,4vw,48px);">
+      <div class="text-center">
+        <span class="eyebrow" data-i18n="s.demo.eyebrow">Попробуй прямо здесь</span>
+        <h2 class="section-title" data-i18n="s.demo.title">Раздача ролей</h2>
+        <p class="section-lead" data-i18n="s.demo.lead">Каждый по очереди заглядывает в свою карту. Трое увидят одного персонажа — а шпион не знает, кто это.</p>
+      </div>
+      <div class="demo-wrap">
+        <div class="demo-cards" id="demoCards"></div>
+        <p class="demo-status" id="demoStatus" data-i18n="s.demo.hint">Нажми «Раздать роли» — раздадим персонажа и спрячем среди вас одного шпиона.</p>
+        <div class="hero-cta" style="margin-top:8px;">
+          <button class="btn btn-primary" type="button" id="dealBtn" data-i18n="s.demo.deal">🎲 Раздать роли</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="section">
+      <div class="text-center">
+        <span class="eyebrow" data-i18n="s.cat.eyebrow">Темы на любой вкус</span>
+        <h2 class="section-title" data-i18n="s.cat.title">8 категорий персонажей</h2>
+        <p class="section-lead" data-i18n="s.cat.lead">Перед игрой выбираете тему — а внутри сотни узнаваемых персонажей.</p>
+      </div>
+      <div class="cat-grid" id="catGrid"></div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section">
+      <div class="text-center">
+        <span class="eyebrow" data-i18n="s.how.eyebrow">Как проходит раунд</span>
+        <h2 class="section-title" data-i18n="s.how.title">Четыре простых шага</h2>
+      </div>
+      <div class="flow">
+        <article class="card"><div class="step-num">1</div><h3 data-i18n="s.s1.title">Раздача</h3><p data-i18n="s.s1.desc">Все получают одного секретного персонажа. Один игрок вместо этого — шпион.</p></article>
+        <article class="card"><div class="step-num">2</div><h3 data-i18n="s.s2.title">Обсуждение</h3><p data-i18n="s.s2.desc">По очереди отвечаете на вопросы о персонаже. Не сболтни лишнего — шпион слушает.</p></article>
+        <article class="card"><div class="step-num">3</div><h3 data-i18n="s.s3.title">Голосование</h3><p data-i18n="s.s3.desc">В конце раунда все указывают на того, кого подозревают в шпионаже.</p></article>
+        <article class="card"><div class="step-num">4</div><h3 data-i18n="s.s4.title">Итог</h3><p data-i18n="s.s4.desc">Вычислили шпиона — победа компании. Он продержался 3 раунда — победа шпиона.</p></article>
+      </div>
+    </section>
+
+    <section class="section download">
+      <div class="card">
+        <picture><source srcset="assets/app-icon.webp" type="image/webp" /><img class="download-logo" src="assets/icon-192.png" alt="Ma Game" width="96" height="96" /></picture>
+        <h2 class="section-title" data-i18n="cta.title">Кто здесь шпион? Узнаешь в игре</h2>
+        <p class="section-lead" data-i18n="cta.lead">Шпион и другие игры скоро на iOS и Android.</p>
+        <div class="store-buttons">
+          <a class="btn btn-primary" href="#" aria-disabled="true"> App Store <span class="badge" data-i18n="badge.soon">Скоро</span></a>
+          <a class="btn btn-ghost" href="#" aria-disabled="true">▶ Google Play <span class="badge" data-i18n="badge.soon">Скоро</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><img class="logo" src="assets/app-icon.webp" alt="" width="34" height="34" /> Ma Game</a>
+      <nav class="footer-links">
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="mailto:mahammadalipashayev@gmail.com" data-i18n="footer.contact">Контакт</a>
+      </nav>
+      <p class="footer-copy" data-i18n="footer.copy">© 2026 Ma Game. Сделано с теплотой.</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" aria-label="Наверх">↑</a>
+
+  <script>
+    window.I18N = {
+      ru: {
+        'nav.allgames': 'Все игры', 'nav.download': 'Скачать', 'nav.back': '← На главную', 'badge.soon': 'Скоро',
+        's.title': 'Шпион',
+        's.lead': 'Все знают секретного персонажа — кроме одного. Шпион блефует, остальные пытаются его вычислить по ответам.',
+        's.pill.players': '<b>3–12</b>&nbsp;игроков', 's.pill.rounds': '<b>3</b>&nbsp;раунда', 's.pill.timer': '⏱ 90&nbsp;сек&nbsp;на&nbsp;раунд',
+        's.demo.eyebrow': 'Попробуй прямо здесь', 's.demo.title': 'Раздача ролей',
+        's.demo.lead': 'Каждый по очереди заглядывает в свою карту. Трое увидят одного персонажа — а шпион не знает, кто это.',
+        's.demo.hint': 'Нажми «Раздать роли» — раздадим персонажа и спрячем среди вас одного шпиона.',
+        's.demo.done': 'Готово! Трое знают персонажа, один — шпион. Найди его по ответам 🕵️',
+        's.demo.deal': '🎲 Раздать роли', 's.demo.again': '🔁 Ещё раз',
+        's.card.tap': 'Нажми, чтобы посмотреть', 's.card.know': 'Ты знаешь персонажа', 's.card.spy': 'ШПИОН', 's.card.spy_sub': 'Блефуй и не спались!',
+        's.cat.eyebrow': 'Темы на любой вкус', 's.cat.title': '8 категорий персонажей',
+        's.cat.lead': 'Перед игрой выбираете тему — а внутри сотни узнаваемых персонажей.',
+        's.how.eyebrow': 'Как проходит раунд', 's.how.title': 'Четыре простых шага',
+        's.s1.title': 'Раздача', 's.s1.desc': 'Все получают одного секретного персонажа. Один игрок вместо этого — шпион.',
+        's.s2.title': 'Обсуждение', 's.s2.desc': 'По очереди отвечаете на вопросы о персонаже. Не сболтни лишнего — шпион слушает.',
+        's.s3.title': 'Голосование', 's.s3.desc': 'В конце раунда все указывают на того, кого подозревают в шпионаже.',
+        's.s4.title': 'Итог', 's.s4.desc': 'Вычислили шпиона — победа компании. Он продержался 3 раунда — победа шпиона.',
+        'cat.movies': 'Кино', 'cat.music': 'Музыка', 'cat.cartoons': 'Мультфильмы', 'cat.fantasy': 'Фэнтези',
+        'cat.politics': 'Политика', 'cat.sports': 'Спорт', 'cat.culture': 'Культура', 'cat.chaos': 'Хаос',
+        'cta.title': 'Кто здесь шпион? Узнаешь в игре', 'cta.lead': 'Шпион и другие игры скоро на iOS и Android.',
+        'footer.privacy': 'Privacy Policy', 'footer.contact': 'Контакт', 'footer.copy': '© 2026 Ma Game. Сделано с теплотой.',
+        'meta.title': 'Шпион — Ma Game',
+        'meta.desc': 'Шпион в Ma Game: все знают секретного персонажа, кроме одного. 8 категорий, 3 раунда, голосование.'
+      },
+      az: {
+        'nav.allgames': 'Bütün oyunlar', 'nav.download': 'Yüklə', 'nav.back': '← Ana səhifə', 'badge.soon': 'Tezliklə',
+        's.title': 'Casus',
+        's.lead': 'Gizli personajı biri istisna hamı bilir. Casus blef edir, qalanları cavablardan onu tapmağa çalışır.',
+        's.pill.players': '<b>3–12</b>&nbsp;oyunçu', 's.pill.rounds': '<b>3</b>&nbsp;raund', 's.pill.timer': '⏱ raunda 90&nbsp;san',
+        's.demo.eyebrow': 'Elə burada sına', 's.demo.title': 'Rolların paylanması',
+        's.demo.lead': 'Hər kəs növbə ilə öz kartına baxır. Üçü eyni personajı görəcək — casus isə onun kim olduğunu bilmir.',
+        's.demo.hint': '«Rolları payla»ya toxun — personaj paylayacaq və aranızda bir casus gizlədəcəyik.',
+        's.demo.done': 'Hazırdır! Üçü personajı bilir, biri casusdur. Cavablardan onu tap 🕵️',
+        's.demo.deal': '🎲 Rolları payla', 's.demo.again': '🔁 Bir də',
+        's.card.tap': 'Baxmaq üçün toxun', 's.card.know': 'Personajı bilirsən', 's.card.spy': 'CASUS', 's.card.spy_sub': 'Blef et, bilinmə!',
+        's.cat.eyebrow': 'Hər zövqə uyğun mövzular', 's.cat.title': '8 personaj kateqoriyası',
+        's.cat.lead': 'Oyundan əvvəl mövzu seçirsiniz — içində yüzlərlə tanınan personaj var.',
+        's.how.eyebrow': 'Raund necə keçir', 's.how.title': 'Dörd sadə addım',
+        's.s1.title': 'Paylama', 's.s1.desc': 'Hamı bir gizli personaj alır. Bir oyunçu isə bunun əvəzinə casusdur.',
+        's.s2.title': 'Müzakirə', 's.s2.desc': 'Növbə ilə personaj haqqında suallara cavab verirsiniz. Artıq söz demə — casus qulaq asır.',
+        's.s3.title': 'Səsvermə', 's.s3.desc': 'Raundun sonunda hamı casus olduğundan şübhələndiyi adamı göstərir.',
+        's.s4.title': 'Nəticə', 's.s4.desc': 'Casusu tapdınız — dəstə qalib. O, 3 raund davam gətirdi — casus qalib.',
+        'cat.movies': 'Kino', 'cat.music': 'Musiqi', 'cat.cartoons': 'Cizgi filmləri', 'cat.fantasy': 'Fantaziya',
+        'cat.politics': 'Siyasət', 'cat.sports': 'İdman', 'cat.culture': 'Mədəniyyət', 'cat.chaos': 'Xaos',
+        'cta.title': 'Casus kimdir? Oyunda öyrənəcəksən', 'cta.lead': 'Casus və digər oyunlar tezliklə iOS və Android-də.',
+        'footer.privacy': 'Məxfilik Siyasəti', 'footer.contact': 'Əlaqə', 'footer.copy': '© 2026 Ma Game. Məhəbbətlə hazırlanıb.',
+        'meta.title': 'Casus — Ma Game',
+        'meta.desc': 'Ma Game-də Casus: gizli personajı biri istisna hamı bilir. 8 kateqoriya, 3 raund, səsvermə.'
+      },
+      en: {
+        'nav.allgames': 'All games', 'nav.download': 'Download', 'nav.back': '← Home', 'badge.soon': 'Soon',
+        's.title': 'Spy',
+        's.lead': 'Everyone knows the secret character — except one. The spy bluffs while the rest try to expose them from the answers.',
+        's.pill.players': '<b>3–12</b>&nbsp;players', 's.pill.rounds': '<b>3</b>&nbsp;rounds', 's.pill.timer': '⏱ 90&nbsp;sec&nbsp;per&nbsp;round',
+        's.demo.eyebrow': 'Try it right here', 's.demo.title': 'Dealing the roles',
+        's.demo.lead': 'Each player peeks at their own card in turn. Three see the same character — the spy has no idea who it is.',
+        's.demo.hint': 'Hit “Deal roles” — we’ll hand out a character and hide one spy among you.',
+        's.demo.done': 'Done! Three know the character, one is the spy. Spot them from the answers 🕵️',
+        's.demo.deal': '🎲 Deal roles', 's.demo.again': '🔁 Again',
+        's.card.tap': 'Tap to peek', 's.card.know': 'You know the character', 's.card.spy': 'SPY', 's.card.spy_sub': 'Bluff and don’t get caught!',
+        's.cat.eyebrow': 'A theme for every taste', 's.cat.title': '8 character categories',
+        's.cat.lead': 'Before the game you pick a theme — packed with hundreds of recognisable characters.',
+        's.how.eyebrow': 'How a round goes', 's.how.title': 'Four simple steps',
+        's.s1.title': 'Deal', 's.s1.desc': 'Everyone gets one secret character. One player is the spy instead.',
+        's.s2.title': 'Discuss', 's.s2.desc': 'Take turns answering questions about the character. Don’t say too much — the spy is listening.',
+        's.s3.title': 'Vote', 's.s3.desc': 'At the end of the round, everyone points at who they suspect is the spy.',
+        's.s4.title': 'Result', 's.s4.desc': 'Catch the spy — the crew wins. They survive 3 rounds — the spy wins.',
+        'cat.movies': 'Movies', 'cat.music': 'Music', 'cat.cartoons': 'Cartoons', 'cat.fantasy': 'Fantasy',
+        'cat.politics': 'Politics', 'cat.sports': 'Sports', 'cat.culture': 'Culture', 'cat.chaos': 'Chaos',
+        'cta.title': 'Who’s the spy? You’ll find out in game', 'cta.lead': 'Spy and more games coming soon to iOS and Android.',
+        'footer.privacy': 'Privacy Policy', 'footer.contact': 'Contact', 'footer.copy': '© 2026 Ma Game. Made with warmth.',
+        'meta.title': 'Spy — Ma Game',
+        'meta.desc': 'Spy in Ma Game: everyone knows the secret character except one. 8 categories, 3 rounds, voting.'
+      }
+    };
+  </script>
+  <script src="i18n.js" defer></script>
+
+  <script>
+    (function () {
+      var CATS = [
+        { id: 'movies', e: '🎬' }, { id: 'music', e: '🎵' }, { id: 'cartoons', e: '🎨' }, { id: 'fantasy', e: '🚀' },
+        { id: 'politics', e: '🏛' }, { id: 'sports', e: '⚽' }, { id: 'culture', e: '🎭' }, { id: 'chaos', e: '🌀' }
+      ];
+      var POOL = [
+        { e: '🕴️', ru: 'Джеймс Бонд', az: 'Ceyms Bond', en: 'James Bond' },
+        { e: '🦇', ru: 'Бэтмен', az: 'Betmen', en: 'Batman' },
+        { e: '⚡', ru: 'Пикачу', az: 'Pikaçu', en: 'Pikachu' },
+        { e: '⚽', ru: 'Месси', az: 'Messi', en: 'Messi' },
+        { e: '🧙', ru: 'Гэндальф', az: 'Qandalf', en: 'Gandalf' },
+        { e: '👑', ru: 'Клеопатра', az: 'Kleopatra', en: 'Cleopatra' }
+      ];
+      var NCARDS = 4;
+      var dealt = false;
+
+      function t(k) { return (window.MaGameI18N && window.MaGameI18N.t(k)) || ''; }
+      function lang() { return (window.MaGameI18N && window.MaGameI18N.current()) || 'ru'; }
+
+      function renderCats() {
+        var grid = document.getElementById('catGrid'); if (!grid) return;
+        grid.innerHTML = '';
+        CATS.forEach(function (c) {
+          var el = document.createElement('div');
+          el.className = 'cat-chip';
+          el.innerHTML = '<span class="e">' + c.e + '</span> ' + t('cat.' + c.id);
+          grid.appendChild(el);
+        });
+      }
+
+      function buildCards(state) {
+        // state: null => face-down placeholders; otherwise {spy:index, char:{}}
+        var wrap = document.getElementById('demoCards'); if (!wrap) return;
+        wrap.innerHTML = '';
+        for (var i = 0; i < NCARDS; i++) {
+          var card = document.createElement('button');
+          card.type = 'button'; card.className = 'spy-card';
+          var isSpy = state && state.spy === i;
+          var back = state
+            ? (isSpy
+                ? '<div class="spy-face back is-spy"><div class="who">🕵️</div><div class="label">' + t('s.card.spy') + '</div><div style="font-size:.72rem;color:var(--text-dim)">' + t('s.card.spy_sub') + '</div></div>'
+                : '<div class="spy-face back"><div class="who">' + state.char.e + '</div><div class="label">' + state.char[lang()] + '</div><div style="font-size:.72rem;color:var(--text-dim)">' + t('s.card.know') + '</div></div>')
+            : '<div class="spy-face back"><div class="who">🤔</div></div>';
+          card.innerHTML = '<div class="spy-card-inner"><div class="spy-face front">❓</div>' + back + '</div>';
+          (function (c) { c.addEventListener('click', function () { c.classList.toggle('flipped'); }); })(card);
+          wrap.appendChild(card);
+        }
+      }
+
+      function deal() {
+        var spy = Math.floor(Math.random() * NCARDS);
+        var char = POOL[Math.floor(Math.random() * POOL.length)];
+        buildCards({ spy: spy, char: char });
+        // auto-reveal with a little stagger for delight
+        var cards = document.querySelectorAll('#demoCards .spy-card');
+        cards.forEach(function (c, idx) { setTimeout(function () { c.classList.add('flipped'); }, 180 + idx * 160); });
+        var status = document.getElementById('demoStatus');
+        if (status) { status.removeAttribute('data-i18n'); status.textContent = t('s.demo.done'); }
+        var btn = document.getElementById('dealBtn');
+        if (btn) { btn.removeAttribute('data-i18n'); btn.textContent = t('s.demo.again'); }
+        dealt = true;
+      }
+
+      function init() {
+        renderCats();
+        if (!dealt) buildCards(null);
+        var btn = document.getElementById('dealBtn');
+        if (btn && !btn._wired) { btn._wired = true; btn.addEventListener('click', deal); }
+      }
+
+      document.addEventListener('i18n:applied', function () {
+        renderCats();
+        // keep current cards but refresh labels if already dealt is non-trivial; simplest: reset to face-down on lang change unless dealt
+        if (!dealt) buildCards(null);
+        var btn = document.getElementById('dealBtn');
+        if (btn && !dealt) { btn.setAttribute('data-i18n', 's.demo.deal'); }
+      });
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
+    })();
+  </script>
+</body>
+</html>
