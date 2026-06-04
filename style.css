@@ -519,7 +519,7 @@ a.card-link:hover .card-cta { gap: 12px; }
 }
 .role-card {
   background: transparent; border: none; padding: 0; cursor: pointer;
-  perspective: 1000px; height: 230px; font: inherit; text-align: left;
+  perspective: 1000px; height: 230px; font: inherit; color: var(--text); text-align: left;
 }
 .role-card-inner {
   position: relative; width: 100%; height: 100%;
@@ -576,7 +576,7 @@ a.card-link:hover .card-cta { gap: 12px; }
 .demo-cards { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
 .spy-card {
   width: 120px; height: 160px; perspective: 900px; cursor: pointer;
-  background: transparent; border: none; padding: 0; font: inherit;
+  background: transparent; border: none; padding: 0; font: inherit; color: var(--text);
 }
 .spy-card-inner {
   position: relative; width: 100%; height: 100%; transform-style: preserve-3d;
