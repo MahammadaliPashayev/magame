@@ -10,10 +10,10 @@
   --bg:            #100C18;
   --bg-soft:       #16111F;
 
-  /* Brand accents */
-  --accent:        #7C6AFF;   /* signature purple */
-  --accent-2:      #9F87FF;
-  --accent-rgb:    124, 106, 255;
+  /* Brand accents — orange-red, unified with iOS */
+  --accent:        #FF5533;   /* signature orange-red (matches iOS) */
+  --accent-2:      #FF7A4D;
+  --accent-rgb:    255, 85, 51;
   --accent-soft:   rgba(var(--accent-rgb), 0.15);
 
   /* Warm plush accents (from the fluffy logo) */
@@ -42,14 +42,6 @@
           "Helvetica Neue", Arial, sans-serif;
 
   --shadow:        0 24px 70px rgba(0, 0, 0, 0.5);
-}
-
-/* Brand accent preview — orange-red variant (matches iOS #FF5533).
-   Toggled via theme-preview.js setting <html data-accent="orange">. */
-html[data-accent="orange"] {
-  --accent:     #FF5533;
-  --accent-2:   #FF7A5C;
-  --accent-rgb: 255, 85, 51;
 }
 
 /* ---------- Reset ---------- */
