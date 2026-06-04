@@ -1,0 +1,9 @@
+# GitHub Pages (Jekyll) configuration.
+# Keep internal/working files in the repo but exclude them from the
+# published site so they are NOT publicly readable at magame.app/<file>.
+exclude:
+  - CLAUDE.md
+  - task.md
+  - PRIVACY_POLICY.md
+  - .gitignore
+  - README.md
