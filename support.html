@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Help &amp; Support — Ma Game</title>
+
+  <meta name="description" content="MaGame Help &amp; Support — FAQ about signing in, guest mode, online rooms, hints, rewarded ads and account deletion, plus how to contact us." />
+  <meta name="theme-color" content="#0D0D1A" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://magame.app/support" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css?v=8" />
+
+  <style>
+    /* FAQ accordion — built from existing design tokens in style.css */
+    .faq details {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: border-color 0.25s ease, background 0.25s ease;
+    }
+    .faq details[open] {
+      border-color: rgba(var(--accent-rgb), 0.45);
+      background: var(--glass-bg-2);
+    }
+    .faq summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 18px 22px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+";
+      flex: none;
+      width: 26px; height: 26px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent-2);
+      font-weight: 800;
+      transition: transform 0.25s ease;
+    }
+    .faq details[open] summary::after { transform: rotate(45deg); }
+    .faq .answer { padding: 0 22px 18px; }
+    .faq .answer p { margin: 0 0 10px; }
+    .faq .answer p:last-child { margin-bottom: 0; }
+
+    .contact-card {
+      background: var(--glass-bg);
+      border: 1px solid rgba(var(--accent-rgb), 0.35);
+      border-radius: var(--radius-sm);
+      backdrop-filter: blur(var(--glass-blur));
+      -webkit-backdrop-filter: blur(var(--glass-blur));
+      padding: 24px 26px;
+      margin-top: 18px;
+    }
+    .contact-card p { margin: 0 0 10px; }
+    .contact-card p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="MaGame — home">
+        <img class="logo" src="assets/app-icon.webp" alt="" width="34" height="34" /> Ma Game
+      </a>
+      <nav class="nav-links" aria-label="Navigation">
+        <a href="index.html">← На главную / Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container doc" id="top">
+    <a class="back-link" href="index.html">← Back to home</a>
+
+    <h1>Help &amp; Support</h1>
+    <p class="updated">We're here to help you get the most out of MaGame.</p>
+
+    <!-- FAQ -->
+    <h2 id="faq">Frequently Asked Questions</h2>
+
+    <div class="faq">
+      <details>
+        <summary>How do I sign in with an email code?</summary>
+        <div class="answer">
+          <p>On the login screen, enter your email address and tap <strong>Continue</strong>. We'll send you a one-time password (OTP) — a short code valid for 5 minutes. Type the code into the app and you're in. No passwords to remember.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I play as a guest, without an account?</summary>
+        <div class="answer">
+          <p>Yes! Choose <strong>Continue as Guest</strong> on the login screen and start playing right away — no email needed. Keep in mind that guest progress is tied to your device and may be lost if you uninstall the app. Sign in with email anytime to keep your XP, levels and progress safe.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I create or join an online room?</summary>
+        <div class="answer">
+          <p><strong>To create a room:</strong> pick a game (Spy or Mafia), tap <strong>Create Room</strong>, and share the room code with your friends.</p>
+          <p><strong>To join a room:</strong> tap <strong>Join Room</strong> and enter the code your friend shared. Everyone joins in seconds, and you can chat with other players in the room while you play.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do hints and rewarded ads work?</summary>
+        <div class="answer">
+          <p>Stuck on a solo puzzle? You can get a hint by choosing to watch a short rewarded video ad. Ads are <strong>always opt-in</strong> — we never show banners or interrupt your game. You decide when (and if) to watch one in exchange for a hint.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>I'm not receiving my OTP code — what should I do?</summary>
+        <div class="answer">
+          <p>First, check your <strong>spam or junk folder</strong> — the code arrives from our email service within a minute or two. Also double-check that you typed your email address correctly.</p>
+          <p>Note: for security, you can request a maximum of <strong>3 codes per 15 minutes</strong>. If you've hit the limit, wait a few minutes and try again. Each code expires after 5 minutes.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I delete my account?</summary>
+        <div class="answer">
+          <p>Email us at <a href="mailto:mahammadalipashayev@gmail.com?subject=Account%20Deletion%20Request">mahammadalipashayev@gmail.com</a> with the subject <strong>"Account Deletion Request"</strong> from the email address linked to your account. We will delete your account and associated data within 30 days, as described in our <a href="privacy.html">Privacy Policy</a>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I change the language or theme?</summary>
+        <div class="answer">
+          <p>Open <strong>Settings</strong> in the app. There you can switch the interface language and choose between light and dark themes — the change applies instantly.</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Contact -->
+    <h2 id="contact">Contact Us</h2>
+    <p>Didn't find your answer above? We're happy to help with anything else — bug reports, feedback, feature ideas or account questions.</p>
+    <div class="contact-card">
+      <p>
+        <strong>Email:</strong> <a href="mailto:mahammadalipashayev@gmail.com">mahammadalipashayev@gmail.com</a><br />
+        <strong>Response time:</strong> Within 30 days (usually much faster)
+      </p>
+      <p>
+        <strong>Developer:</strong> Mahammadali Pashayev (MaGame)<br />
+        <strong>Location:</strong> Baku, Azerbaijan
+      </p>
+    </div>
+
+    <!-- Legal links -->
+    <h2 id="legal">Legal</h2>
+    <ul>
+      <li><a href="/privacy">Privacy Policy</a> — how we collect, use and protect your data</li>
+      <li><a href="/terms">Terms of Service</a> — the rules for using MaGame</li>
+    </ul>
+
+    <hr />
+    <p style="margin-top:24px;color:var(--text-dim);font-size:0.9rem;font-style:italic;">
+      MaGame is a party games mobile application developed by Mahammadali Pashayev (MaGame), Azerbaijan.
+    </p>
+
+    <a class="back-link" href="index.html" style="margin-top:32px;">← Back to home</a>
+  </main>
+
+  <!-- Back to top button -->
+  <a href="#top" class="to-top" aria-label="Наверх / Back to top" title="Наверх">↑</a>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('.to-top');
+      if (!btn) return;
+      var onScroll = function () {
+        if (window.scrollY > 600) btn.classList.add('show');
+        else btn.classList.remove('show');
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>
