@@ -32,7 +32,7 @@
     <a class="back-link" href="index.html">← Back to home</a>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: May 29, 2026</p>
+    <p class="updated">Last updated: June 14, 2026</p>
 
     <!-- Table of contents / anchor links -->
     <nav class="toc" aria-label="Table of contents">
@@ -111,6 +111,17 @@
     <h3>3.6 Guest Users</h3>
     <p>If you use the App as a guest, we assign a temporary anonymous User ID. No email is collected. Guest data may be lost if the app is uninstalled.</p>
 
+    <h3>3.7 Chat &amp; User-Generated Content (Online Game Rooms)</h3>
+    <p>Online game modes (Spy and Mafia) include real-time chat between players. When you join an online room, we collect and process:</p>
+    <ul>
+      <li><strong>Chat messages</strong> — the text you send in a game room. Messages are shown in real time to the other players in the same room and are linked to your display name and User ID.</li>
+      <li><strong>Display name and avatar</strong> — shown to the other players in the room so they can identify you during the game.</li>
+      <li><strong>Abuse reports</strong> — if you report a message or a player, we store the report (your User ID, the reported user, the room and message reference, and the reason) so we can review and act on it.</li>
+    </ul>
+    <p>Chat messages and reports are stored in Google Firebase Cloud Firestore (see Section 5.1). We use this content <strong>only</strong> to operate the multiplayer experience and to keep the community safe. We do <strong>not</strong> use the content of your chat messages for advertising, ad personalization, or tracking across apps or websites, and we do <strong>not</strong> sell it.</p>
+    <p><strong>Moderation &amp; safety.</strong> To keep online rooms safe, we apply an automatic profanity filter and provide in-app <em>Report</em> and <em>Block</em> tools. We may review, filter, or remove user-generated content, and may warn, mute, suspend, or permanently ban users who violate our <a href="/terms">Terms of Service</a> — typically within 24 hours of a valid report. See the Terms of Service for the full content rules.</p>
+    <p><strong>Please do not share sensitive personal information</strong> (such as your home address, phone number, or financial details) in chat — other players in the room can see what you post.</p>
+
     <!-- 4 -->
     <h2 id="how-we-use">4. How We Use Your Data</h2>
     <div class="table-wrap">
@@ -125,6 +136,8 @@
           <tr><td>Ad event logs</td><td>Analytics, fraud prevention</td><td>Legitimate interest</td></tr>
           <tr><td>IP address (hashed)</td><td>Rate limiting, security</td><td>Legitimate interest</td></tr>
           <tr><td>AdMob data</td><td>Show relevant rewarded ads</td><td>Consent</td></tr>
+          <tr><td>Chat messages</td><td>Deliver messages to other players in your game room; safety &amp; moderation</td><td>Contract performance / Legitimate interest</td></tr>
+          <tr><td>Abuse reports</td><td>Review and act on reported content; community safety</td><td>Legitimate interest</td></tr>
         </tbody>
       </table>
     </div>
@@ -196,6 +209,8 @@
           <tr><td>Game progress</td><td>Until account deletion is requested</td></tr>
           <tr><td>Ad event logs</td><td>12 months</td></tr>
           <tr><td>Firebase Auth data</td><td>Until account deletion is requested</td></tr>
+          <tr><td>Chat messages (online rooms)</td><td>Stored with the game room; deleted with your account where feasible</td></tr>
+          <tr><td>Abuse reports</td><td>Up to 12 months for safety and moderation</td></tr>
         </tbody>
       </table>
     </div>
